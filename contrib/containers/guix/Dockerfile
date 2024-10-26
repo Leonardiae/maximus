@@ -82,12 +82,12 @@ COPY --from=docker_root ./scripts/guix-start /usr/local/bin/guix-start
 # Create directories for mounting to save/restore cache and grant necessary permissions
 RUN mkdir -p \
         /home/${USERNAME}/.cache \
-        /src/osmium/depends/{built,sources,work} && \
+        /src/maximus/depends/{built,sources,work} && \
     chown -R ${USER_ID}:${GROUP_ID} \
         /home/${USERNAME}/.cache \
         /src
 
-WORKDIR "/src/osmium"
+WORKDIR "/src/maximus"
 
 # Switch to unprivileged context
 USER ${USERNAME}

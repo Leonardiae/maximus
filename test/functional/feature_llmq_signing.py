@@ -12,14 +12,14 @@ Checks LLMQs signing sessions
 
 from test_framework.messages import CSigShare, msg_qsigshare, uint256_to_string
 from test_framework.p2p import P2PInterface
-from test_framework.test_framework import OsmiumTestFramework
+from test_framework.test_framework import MaximusTestFramework
 from test_framework.util import assert_equal, assert_raises_rpc_error, force_finish_mnsync, hex_str_to_bytes, wait_until
 
 
-class LLMQSigningTest(OsmiumTestFramework):
+class LLMQSigningTest(MaximusTestFramework):
     def set_test_params(self):
-        self.set_osmium_test_params(6, 5, fast_dip3_enforcement=True)
-        self.set_osmium_llmq_test_params(5, 3)
+        self.set_maximus_test_params(6, 5, fast_dip3_enforcement=True)
+        self.set_maximus_llmq_test_params(5, 3)
 
     def add_options(self, parser):
         parser.add_argument("--spork21", dest="spork21", default=False, action="store_true",

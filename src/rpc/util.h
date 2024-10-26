@@ -31,7 +31,7 @@
 extern const std::string UNIX_EPOCH_TIME;
 
 /**
- * Example Osmium addresses for the RPCExamples help documentation. They are intentionally
+ * Example Maximus addresses for the RPCExamples help documentation. They are intentionally
  * invalid to prevent accidental transactions by users.
  */
 extern const std::string EXAMPLE_ADDRESS[2];

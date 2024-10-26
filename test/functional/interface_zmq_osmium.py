@@ -2,7 +2,7 @@
 # Copyright (c) 2018-2024 The Dash Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Test the osmium specific ZMQ notification interfaces."""
+"""Test the maximus specific ZMQ notification interfaces."""
 
 import configparser
 from enum import Enum
@@ -12,7 +12,7 @@ import random
 import struct
 import time
 
-from test_framework.test_framework import OsmiumTestFramework
+from test_framework.test_framework import MaximusTestFramework
 from test_framework.p2p import P2PInterface
 from test_framework.util import assert_equal, assert_raises_rpc_error
 from test_framework.messages import (
@@ -97,7 +97,7 @@ class TestP2PConn(P2PInterface):
                 self.send_message(self.txes[inv.hash])
 
 
-class OsmiumZMQTest (OsmiumTestFramework):
+class MaximusZMQTest (MaximusTestFramework):
     def set_test_params(self):
         # That's where the zmq publisher will listen for subscriber
         self.address = "tcp://127.0.0.1:28333"
@@ -108,8 +108,8 @@ class OsmiumZMQTest (OsmiumTestFramework):
 
         extra_args = [[]] * 5
         extra_args[0] = node0_extra_args
-        self.set_osmium_test_params(5, 4, fast_dip3_enforcement=True, extra_args=extra_args)
-        self.set_osmium_llmq_test_params(4, 4)
+        self.set_maximus_test_params(5, 4, fast_dip3_enforcement=True, extra_args=extra_args)
+        self.set_maximus_llmq_test_params(4, 4)
 
     def skip_test_if_missing_module(self):
         self.skip_if_no_py3_zmq()
@@ -118,7 +118,7 @@ class OsmiumZMQTest (OsmiumTestFramework):
 
     def run_test(self):
         self.subscribers = {}
-        # Check that osmiumd has been built with ZMQ enabled.
+        # Check that maximusd has been built with ZMQ enabled.
         config = configparser.ConfigParser()
         config.read_file(open(self.options.configfile))
         import zmq
@@ -146,7 +146,7 @@ class OsmiumZMQTest (OsmiumTestFramework):
             # Wait a moment to avoid subscribing to recovered sig in the test before the one from the chainlock
             # has been sent which leads to test failure.
             time.sleep(1)
-            # Test all osmium related ZMQ publisher
+            # Test all maximus related ZMQ publisher
             #self.test_recovered_signature_publishers()
             self.test_chainlock_publishers()
             self.test_governance_publishers()
@@ -371,7 +371,7 @@ class OsmiumZMQTest (OsmiumTestFramework):
             "end_epoch": proposal_time + 60,
             "payment_amount": 5,
             "payment_address": self.nodes[0].getnewaddress(),
-            "url": "https://osmium.space"
+            "url": "https://maximus.space"
         }
         proposal_hex = ''.join(format(x, '02x') for x in json.dumps(proposal_data).encode())
         collateral = self.nodes[0].gobject("prepare", "0", proposal_rev, proposal_time, proposal_hex)
@@ -445,4 +445,4 @@ class OsmiumZMQTest (OsmiumTestFramework):
         ])
 
 if __name__ == '__main__':
-    OsmiumZMQTest().main()
+    MaximusZMQTest().main()

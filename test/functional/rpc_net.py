@@ -15,7 +15,7 @@ from test_framework.messages import (
 
 from itertools import product
 
-from test_framework.test_framework import OsmiumTestFramework
+from test_framework.test_framework import MaximusTestFramework
 from test_framework.util import (
     assert_approx,
     assert_equal,
@@ -38,9 +38,9 @@ def assert_net_servicesnames(servicesflag, servicenames):
     assert servicesflag_generated == servicesflag
 
 
-class NetTest(OsmiumTestFramework):
+class NetTest(MaximusTestFramework):
     def set_test_params(self):
-        self.set_osmium_test_params(3, 1, fast_dip3_enforcement=True)
+        self.set_maximus_test_params(3, 1, fast_dip3_enforcement=True)
         self.supports_cli = False
 
     def run_test(self):

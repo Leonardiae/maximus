@@ -1,7 +1,7 @@
 // Created on: Jun 24, 2018
 //       Author: Tri Nguyen
 // Copyright (c) 2020-2024 The Raptoreum developers
-// Copyright (c) 2024 The Osmium developers
+// Copyright (c) 2024 The Maximus developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 

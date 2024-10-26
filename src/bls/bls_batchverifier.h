@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef OSMIUM_CRYPTO_BLS_BATCHVERIFIER_H
-#define OSMIUM_CRYPTO_BLS_BATCHVERIFIER_H
+#ifndef MAXIMUS_CRYPTO_BLS_BATCHVERIFIER_H
+#define MAXIMUS_CRYPTO_BLS_BATCHVERIFIER_H
 
 #include <bls/bls.h>
 
@@ -237,4 +237,4 @@ private:
     }
 };
 
-#endif //OSMIUM_CRYPTO_BLS_BATCHVERIFIER_H
+#endif //MAXIMUS_CRYPTO_BLS_BATCHVERIFIER_H

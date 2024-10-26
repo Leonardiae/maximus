@@ -2,7 +2,7 @@
 //       Author: Tri Nguyen
 // Copyright (c) 2018 The Pigeon Core developers
 // Copyright (c) 2020-2024 The Raptoreum developers
-// Copyright (c) 2024 The Osmium developers
+// Copyright (c) 2024 The Maximus developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -37,7 +37,7 @@ void DevfeePayment::FillDevfeePayment(CMutableTransaction& txNew, int nBlockHeig
 	  // fill payee with the devfee address
 	  CTxDestination devfeeAddr = DecodeDestination(devfeeAddress);
 	  if(!IsValidDestination(devfeeAddr)) {
-	      throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, strprintf("Invalid Osmium Devfee Address: %s", devfeeAddress.c_str()));
+	      throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, strprintf("Invalid Maximus Devfee Address: %s", devfeeAddress.c_str()));
     }
 	  CScript payee = GetScriptForDestination(devfeeAddr);
     // GET DEVFEE PAYMENT VARIABLES SETUP

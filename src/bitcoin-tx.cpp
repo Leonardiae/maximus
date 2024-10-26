@@ -103,11 +103,11 @@ static int AppInitRawTx(int argc, char* argv[])
 
     if (argc < 2 || HelpRequested(gArgs) || gArgs.IsArgSet("-version")) {
         // First part of help message is specific to this utility
-        std::string strUsage = PACKAGE_NAME " osmium-tx utility version " + FormatFullVersion() + "\n";
+        std::string strUsage = PACKAGE_NAME " maximus-tx utility version " + FormatFullVersion() + "\n";
         if (!gArgs.IsArgSet("-version")) {
             strUsage += "\n"
-                "Usage:  osmium-tx [options] <hex-tx> [commands]  Update hex-encoded osmium transaction\n"
-                "or:     osmium-tx [options] -create [commands]   Create hex-encoded osmium transaction\n"
+                "Usage:  maximus-tx [options] <hex-tx> [commands]  Update hex-encoded maximus transaction\n"
+                "or:     maximus-tx [options] -create [commands]   Create hex-encoded maximus transaction\n"
                 "\n";
             strUsage += gArgs.GetHelpMessage();
         }
@@ -742,7 +742,7 @@ static int CommandLineRawTx(int argc, char* argv[])
             if (argc < 2)
                 throw std::runtime_error("too few parameters");
 
-            // param: hex-encoded osmium transaction
+            // param: hex-encoded maximus transaction
             std::string strHexTx(argv[1]);
             if (strHexTx == "-")                 // "-" implies standard input
                 strHexTx = readStdin();

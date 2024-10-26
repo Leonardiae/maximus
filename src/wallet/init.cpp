@@ -44,7 +44,7 @@ public:
     //! Add wallets that should be opened to list of chain clients.
     void Construct(NodeContext& node) const override;
 
-    // Osmium Specific Wallet Init
+    // Maximus Specific Wallet Init
     void AutoLockMasternodeCollaterals() const override;
     void InitCoinJoinSettings(const CoinJoinWalletManager& cjwalletman) const override;
     bool InitAutoBackup() const override;

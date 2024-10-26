@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.osmium.Osmium-Qt";
+        return @"org.maximus.Maximus-Qt";
     } else {
         return [self __bundleIdentifier];
     }

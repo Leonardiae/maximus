@@ -3,7 +3,7 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-from test_framework.test_framework import OsmiumTestFramework
+from test_framework.test_framework import MaximusTestFramework
 
 '''
 feature_llmq_dkgerrors.py
@@ -12,9 +12,9 @@ Simulate and check DKG errors
 
 '''
 
-class LLMQDKGErrors(OsmiumTestFramework):
+class LLMQDKGErrors(MaximusTestFramework):
     def set_test_params(self):
-        self.set_osmium_test_params(4, 3, [["-whitelist=127.0.0.1"]] * 4, fast_dip3_enforcement=True)
+        self.set_maximus_test_params(4, 3, [["-whitelist=127.0.0.1"]] * 4, fast_dip3_enforcement=True)
 
     def run_test(self):
         self.activate_dip8()

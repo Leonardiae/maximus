@@ -104,7 +104,7 @@ std::ostream& operator<<(std::ostream& os, const uint256& num)
     return os;
 }
 
-void OsmiumTestSetup(NodeContext& node)
+void MaximusTestSetup(NodeContext& node)
 {
     CChainState& chainstate = Assert(node.chainman)->ActiveChainstate();
 
@@ -117,7 +117,7 @@ void OsmiumTestSetup(NodeContext& node)
     node.llmq_ctx = std::make_unique<LLMQContext>(chainstate, *node.connman, *node.evodb, *node.sporkman, *node.mempool, node.peerman, true, false);
 }
 
-void OsmiumTestSetupClose(NodeContext& node)
+void MaximusTestSetupClose(NodeContext& node)
 {
     node.llmq_ctx->Interrupt();
     node.llmq_ctx->Stop();
@@ -295,7 +295,7 @@ TestingSetup::TestingSetup(const std::string& chainName, const std::vector<const
         m_node.connman->Init(options);
     }
 
-    OsmiumTestSetup(m_node);
+    MaximusTestSetup(m_node);
 
     BlockValidationState state;
     if (!::ChainstateActive().ActivateBestChain(state)) {
@@ -305,7 +305,7 @@ TestingSetup::TestingSetup(const std::string& chainName, const std::vector<const
 
 TestingSetup::~TestingSetup()
 {
-    OsmiumTestSetupClose(m_node);
+    MaximusTestSetupClose(m_node);
     m_node.connman->Stop();
     m_node.peerman.reset();
     m_node.banman.reset();

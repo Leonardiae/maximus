@@ -10,9 +10,9 @@ bip32 = []
 use_serde = ["serde"]
 dash_helpers = ["rand"]
 default = [ "legacy", "bip32", "dash_helpers", "use_serde"]
-apple = ["bls-osmium-sys/apple"]
+apple = ["bls-maximus-sys/apple"]
 
 [dependencies]
-bls-osmium-sys = { path = "../bls-osmium-sys" }
+bls-maximus-sys = { path = "../bls-maximus-sys" }
 serde = { version= "1.0.160", features = ["derive"], optional = true}
 rand = { version= "0.8.5", optional = true}

@@ -5,7 +5,7 @@ file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 ---------------------------------------------------------------------
 
-This file contains color changes for the osmium theme "Light".
+This file contains color changes for the maximus theme "Light".
 
 NOTE: This file gets appended to the general.css while its
 getting loaded in GUIUtil::loadStyleSheet(). Thus changes made in
@@ -17,19 +17,22 @@ Loaded in GUIUtil::loadStyleSheet() in guitil.cpp.
 /* do not modify! section updated by update-css-files.py
 <colors>
 
-# Used colors in light.css for commit 44de8a93f2
+# Used colors in light.css for commit bf3f4f7f8
 
 #00000000
 #555
 #008de4
 #0f75b5
+#1E1E1E
 #a7a7a7
+#AB84BB
 #c7c7c7
 #d2d2d2
 #dcdcdc
 #e0e0e0
 #eaeaec
 #f2f2f4
+#ffffff
 #ccfafafa
 
 </colors>
@@ -671,7 +674,7 @@ QToolBar > QToolButton:disabled {
 
 QToolBar QLabel#lblToolbarLogo {
   padding: 12px;
-  image: url(':/images/osmium_logo_toolbar_light');
+  image: url(':/images/maximus_logo_toolbar_light');
   height: 2.5em;
 }
 

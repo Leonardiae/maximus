@@ -10,7 +10,7 @@ from test_framework.p2p import (
     p2p_lock,
     P2PInterface,
 )
-from test_framework.test_framework import OsmiumTestFramework
+from test_framework.test_framework import MaximusTestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
@@ -115,10 +115,10 @@ class QuorumDataInterface(P2PInterface):
         return self.last_message["qdata"]
 
 
-class QuorumDataMessagesTest(OsmiumTestFramework):
+class QuorumDataMessagesTest(MaximusTestFramework):
     def set_test_params(self):
         extra_args = [["-llmq-data-recovery=0"]] * 4
-        self.set_osmium_test_params(4, 3, fast_dip3_enforcement=True, extra_args=extra_args)
+        self.set_maximus_test_params(4, 3, fast_dip3_enforcement=True, extra_args=extra_args)
 
     def restart_mn(self, mn, reindex=False):
         args = self.extra_args[mn.node.index] + ['-masternodeblsprivkey=%s' % mn.keyOperator]

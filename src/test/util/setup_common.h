@@ -73,9 +73,9 @@ static inline bool InsecureRandBool() { return g_insecure_rand_ctx.randbool(); }
 
 static constexpr CAmount CENT{1000000};
 
-/* Initialize Osmium-specific components after chainstate initialization */
-void OsmiumTestSetup(NodeContext& node);
-void OsmiumTestSetupClose(NodeContext& node);
+/* Initialize Maximus-specific components after chainstate initialization */
+void MaximusTestSetup(NodeContext& node);
+void MaximusTestSetupClose(NodeContext& node);
 
 /** Basic testing setup.
  * This just configures logging, data dir and chain parameters.

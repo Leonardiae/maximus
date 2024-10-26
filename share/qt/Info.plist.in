@@ -11,7 +11,7 @@
   </array>
 
   <key>CFBundleIconFile</key>
-  <string>osmium.icns</string>
+  <string>maximus.icns</string>
 
   <key>CFBundlePackageType</key>
   <string>APPL</string>
@@ -26,15 +26,15 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Osmium-Qt</string>
+  <string>Maximus-Qt</string>
   <key>CFBundleName</key>
-  <string>Osmium-Qt</string>
+  <string>Maximus-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.osmium.Osmium-Qt</string>
+  <string>org.maximus.Maximus-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -42,10 +42,10 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.osmium.Dashpayment</string>
+      <string>org.maximus.Dashpayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
-        <string>osmium</string>
+        <string>maximus</string>
       </array>
     </dict>
   </array>

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef OSMIUM_CRYPTO_BLS_H
-#define OSMIUM_CRYPTO_BLS_H
+#ifndef MAXIMUS_CRYPTO_BLS_H
+#define MAXIMUS_CRYPTO_BLS_H
 
 #include <hash.h>
 #include <serialize.h>
@@ -11,7 +11,7 @@
 #include <util/strencodings.h>
 #include <util/ranges.h>
 
-// bls-osmium uses relic, which may define DEBUG and ERROR, which leads to many warnings in some build setups
+// bls-maximus uses relic, which may define DEBUG and ERROR, which leads to many warnings in some build setups
 #undef ERROR
 #undef DEBUG
 #include <dashbls/bls.hpp>
@@ -591,4 +591,4 @@ using BLSVerificationVectorPtr = std::shared_ptr<std::vector<CBLSPublicKey>>;
 
 bool BLSInit();
 
-#endif // OSMIUM_CRYPTO_BLS_H
+#endif // MAXIMUS_CRYPTO_BLS_H

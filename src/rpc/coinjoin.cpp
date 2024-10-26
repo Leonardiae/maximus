@@ -181,10 +181,10 @@ void RegisterCoinJoinRPCCommands(CRPCTable &t)
 static const CRPCCommand commands[] =
     { //  category              name                      actor (function)         argNames
         //  --------------------- ------------------------  ---------------------------------
-        { "osmium",               "getpoolinfo",            &getpoolinfo,            {} },
-        { "osmium",               "getcoinjoininfo",        &getcoinjoininfo,        {} },
+        { "maximus",               "getpoolinfo",            &getpoolinfo,            {} },
+        { "maximus",               "getcoinjoininfo",        &getcoinjoininfo,        {} },
 #ifdef ENABLE_WALLET
-        { "osmium",               "coinjoin",               &coinjoin,               {} },
+        { "maximus",               "coinjoin",               &coinjoin,               {} },
 #endif // ENABLE_WALLET
 };
 // clang-format on

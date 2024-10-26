@@ -11,7 +11,7 @@
 
 #include <string>
 
-const std::string CURRENCY_UNIT = "OSMI"; // One formatted unit
+const std::string CURRENCY_UNIT = "MAXI"; // One formatted unit
 const std::string CURRENCY_ATOM = "muff"; // One indivisible minimum value unit
 
 /* Used to determine type of fee estimation requested */
@@ -19,7 +19,7 @@ enum class FeeEstimateMode {
     UNSET,        //!< Use default settings based on other criteria
     ECONOMICAL,   //!< Force estimateSmartFee to use non-conservative estimates
     CONSERVATIVE, //!< Force estimateSmartFee to use conservative estimates
-    OSMIUM_KB,      //!< Use explicit OSMI/kB fee given in coin control
+    MAXIMUS_KB,      //!< Use explicit MAXI/kB fee given in coin control
     MUFF_B,       //!< Use explicit muff/B fee given in coin control
 };
 
@@ -56,7 +56,7 @@ public:
     friend bool operator>=(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK >= b.nSatoshisPerK; }
     friend bool operator!=(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK != b.nSatoshisPerK; }
     CFeeRate& operator+=(const CFeeRate& a) { nSatoshisPerK += a.nSatoshisPerK; return *this; }
-    std::string ToString(const FeeEstimateMode& fee_estimate_mode = FeeEstimateMode::OSMIUM_KB) const;
+    std::string ToString(const FeeEstimateMode& fee_estimate_mode = FeeEstimateMode::MAXIMUS_KB) const;
 
     SERIALIZE_METHODS(CFeeRate, obj) { READWRITE(obj.nSatoshisPerK); }
 };

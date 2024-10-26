@@ -1,36 +1,36 @@
-Osmium Core staging tree
+Maximus Core staging tree
 ===========================
 
 |CI|master|develop|
 |-|-|-|
-|Gitlab|[![Build Status](https://gitlab.com/osmium-labs/osmium/badges/master/pipeline.svg)](https://gitlab.com/osmium-labs/osmium/-/tree/master)|[![Build Status](https://gitlab.com/osmium-labs/osmium/badges/develop/pipeline.svg)](https://gitlab.com/osmium-labs/osmium/-/tree/develop)|
+|Gitlab|[![Build Status](https://gitlab.com/maximus-labs/maximus/badges/master/pipeline.svg)](https://gitlab.com/maximus-labs/maximus/-/tree/master)|[![Build Status](https://gitlab.com/maximus-labs/maximus/badges/develop/pipeline.svg)](https://gitlab.com/maximus-labs/maximus/-/tree/develop)|
 
-https://www.osmium.space
+https://www.maximus.space
 
-For an immediately usable, binary version of the Osmium Core software, see releases in our GitHub.
+For an immediately usable, binary version of the Maximus Core software, see releases in our GitHub.
 
-Further information about Osmium Core is available in the [doc folder](/doc).
+Further information about Maximus Core is available in the [doc folder](/doc).
 
-What is Osmium?
+What is Maximus?
 -------------
 
-Osmium was born from a very simple idea, to promote and reward talent in the blockchain space. It is our goal to drive innovation and to give back what we create to the entire crypto community. We shall create a unique ecosystem that will have the capability to identify and fund innovative projects that can help the entire blockchain space.
+Maximus was born from a very simple idea, to promote and reward talent in the blockchain space. It is our goal to drive innovation and to give back what we create to the entire crypto community. We shall create a unique ecosystem that will have the capability to identify and fund innovative projects that can help the entire blockchain space.
 
 
-For more information read the original Osmium whitepaper.
+For more information read the original Maximus whitepaper.
 
 License
 -------
 
-Osmium Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+Maximus Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see https://opensource.org/licenses/MIT.
 
 Development Process
 -------------------
 
 The `master` branch is meant to be stable. Development is normally done in separate branches.
-[Tags](https://github.com/osmium-labs/osmium/tags) are created to indicate new official,
-stable release versions of Osmium Core.
+[Tags](https://github.com/maximus-labs/maximus/tags) are created to indicate new official,
+stable release versions of Maximus Core.
 
 The `develop` branch is regularly built (see doc/build-*.md for instructions) and tested, but is not guaranteed to be
 completely stable.

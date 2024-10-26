@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef OSMIUM_RPC_AUXPOW_MINER_H
-#define OSMIUM_RPC_AUXPOW_MINER_H
+#ifndef MAXIMUS_RPC_AUXPOW_MINER_H
+#define MAXIMUS_RPC_AUXPOW_MINER_H
 
 #include <miner.h>
 #include <rpc/request.h>
@@ -106,4 +106,4 @@ public:
 
 };
 
-#endif // OSMIUM_RPC_AUXPOW_MINER_H
+#endif // MAXIMUS_RPC_AUXPOW_MINER_H

@@ -1,16 +1,16 @@
 # It is not recommended to modify this file in-place, because it will
 # be overwritten during package upgrades. If you want to add further
 # options or overwrite existing ones then use
-# $ systemctl edit osmiumd.service
+# $ systemctl edit maximusd.service
 # See "man systemd.service" for details.
 
 # Note that almost all daemon options could be specified in
-# /etc/osmium/osmium.conf, but keep in mind those explicitly
+# /etc/maximus/maximus.conf, but keep in mind those explicitly
 # specified as arguments in ExecStart= will override those in the
 # config file.
 
 [Unit]
-Description=Osmium daemon
+Description=Maximus daemon
 Documentation=https://github.com/dashpay/dash/blob/master/doc/init.md
 
 # https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/
@@ -18,40 +18,40 @@ After=network-online.target
 Wants=network-online.target
 
 [Service]
-ExecStart=/usr/bin/osmiumd -daemon \
-                                                            -pid=/run/osmiumd/osmiumd.pid \
-                                                            -conf=/etc/osmium/osmium.conf  \
-                                                            -datadir=/var/lib/osmiumd
+ExecStart=/usr/bin/maximusd -daemon \
+                                                            -pid=/run/maximusd/maximusd.pid \
+                                                            -conf=/etc/maximus/maximus.conf  \
+                                                            -datadir=/var/lib/maximusd
 
 # Make sure the config directory is readable by the service user
 PermissionsStartOnly=true
-ExecStartPre=/bin/chgrp osmiumcore /etc/osmium
+ExecStartPre=/bin/chgrp maximuscore /etc/maximus
 
 # Process management
 ####################
 
 Type=forking
-PIDFile=/run/osmiumd/osmiumd.pid
+PIDFile=/run/maximusd/maximusd.pid
 Restart=on-failure
 TimeoutStopSec=600
 
 # Directory creation and permissions
 ####################################
 
-# Run as osmium:osmium
-User=osmiumcore
-Group=osmiumcore
+# Run as maximus:maximus
+User=maximuscore
+Group=maximuscore
 
-# /run/osmiumd
-RuntimeDirectory=osmiumd
+# /run/maximusd
+RuntimeDirectory=maximusd
 RuntimeDirectoryMode=0710
 
-# /etc/osmium
-ConfigurationDirectory=osmium
+# /etc/maximus
+ConfigurationDirectory=maximus
 ConfigurationDirectoryMode=0710
 
-# /var/lib/osmiumd
-StateDirectory=osmiumd
+# /var/lib/maximusd
+StateDirectory=maximusd
 StateDirectoryMode=0710
 
 # Hardening measures

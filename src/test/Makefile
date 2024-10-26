@@ -1,6 +1,6 @@
 all:
-	$(MAKE) -C .. osmium_test
+	$(MAKE) -C .. maximus_test
 clean:
-	$(MAKE) -C .. osmium_test_clean
+	$(MAKE) -C .. maximus_test_clean
 check:
-	$(MAKE) -C .. osmium_test_check
+	$(MAKE) -C .. maximus_test_check

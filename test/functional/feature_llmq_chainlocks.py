@@ -12,13 +12,13 @@ Checks LLMQs based ChainLocks
 
 import time
 
-from test_framework.test_framework import OsmiumTestFramework
+from test_framework.test_framework import MaximusTestFramework
 from test_framework.util import force_finish_mnsync, assert_equal, assert_raises_rpc_error
 
 
-class LLMQChainLocksTest(OsmiumTestFramework):
+class LLMQChainLocksTest(MaximusTestFramework):
     def set_test_params(self):
-        self.set_osmium_test_params(5, 4, fast_dip3_enforcement=True)
+        self.set_maximus_test_params(5, 4, fast_dip3_enforcement=True)
 
     def run_test(self):
 

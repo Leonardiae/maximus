@@ -7,14 +7,14 @@ export LC_ALL=C
 set -e
 
 # Get Tor service IP if running
-if [[ "$1" == "osmiumd" ]]; then
-  # Because osmiumd only accept torcontrol= host as an ip only, we resolve it here and add to config
+if [[ "$1" == "maximusd" ]]; then
+  # Because maximusd only accept torcontrol= host as an ip only, we resolve it here and add to config
   if [[ "$TOR_CONTROL_HOST" ]] && [[ "$TOR_CONTROL_PORT" ]] && [[ "$TOR_PROXY_PORT" ]]; then
     TOR_IP=$(getent hosts $TOR_CONTROL_HOST | cut -d ' ' -f 1)
-    echo "proxy=$TOR_IP:$TOR_PROXY_PORT" >> "$HOME/.osmiumcore/osmium.conf"
-    echo "Added "proxy=$TOR_IP:$TOR_PROXY_PORT" to $HOME/.osmiumcore/osmium.conf"
-    echo "torcontrol=$TOR_IP:$TOR_CONTROL_PORT" >> "$HOME/.osmiumcore/osmium.conf"
-    echo "Added "torcontrol=$TOR_IP:$TOR_CONTROL_PORT" to $HOME/.osmiumcore/osmium.conf"
+    echo "proxy=$TOR_IP:$TOR_PROXY_PORT" >> "$HOME/.maximuscore/maximus.conf"
+    echo "Added "proxy=$TOR_IP:$TOR_PROXY_PORT" to $HOME/.maximuscore/maximus.conf"
+    echo "torcontrol=$TOR_IP:$TOR_CONTROL_PORT" >> "$HOME/.maximuscore/maximus.conf"
+    echo "Added "torcontrol=$TOR_IP:$TOR_CONTROL_PORT" to $HOME/.maximuscore/maximus.conf"
     echo -e "\n"
   else
     echo "Tor control credentials not provided"

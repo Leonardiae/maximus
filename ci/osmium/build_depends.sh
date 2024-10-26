@@ -9,7 +9,7 @@ export LC_ALL=C.UTF-8
 
 set -e
 
-source ./ci/osmium/matrix.sh
+source ./ci/maximus/matrix.sh
 
 unset CC; unset CXX
 unset DISPLAY

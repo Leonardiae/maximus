@@ -2,7 +2,7 @@
 // Copyright (c) 2011 Vince Durham
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2021 Daniel Kraft
-// Copyright (c) 2024 The Osmium developers
+// Copyright (c) 2024 The Maximus developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file license.txt or http://www.opensource.org/licenses/mit-license.php.
 

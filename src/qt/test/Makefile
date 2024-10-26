@@ -1,6 +1,6 @@
 all:
-	$(MAKE) -C ../../ test_osmium_qt
+	$(MAKE) -C ../../ test_maximus_qt
 clean:
-	$(MAKE) -C ../../ test_osmium_qt_clean
+	$(MAKE) -C ../../ test_maximus_qt_clean
 check:
-	$(MAKE) -C ../../ test_osmium_qt_check
+	$(MAKE) -C ../../ test_maximus_qt_check

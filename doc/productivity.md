@@ -75,9 +75,9 @@ When rebuilding during development, note that running `make`, without giving a t
 Obviously, it is important to build and run the tests at appropriate times -- but when you just want a quick compile to check your work, consider picking one or a set of build targets relevant to what you're working on, e.g.:
 
 ```sh
-make src/osmiumd src/osmium-cli
-make src/qt/osmium-qt
-make -C src osmium_bench
+make src/maximusd src/maximus-cli
+make src/qt/maximus-qt
+make -C src maximus_bench
 ```
 
 (You can and should combine this with `-j`, as above, for a parallel build.)

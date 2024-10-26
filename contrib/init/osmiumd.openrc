@@ -2,26 +2,26 @@
 
 # backward compatibility for existing gentoo layout 
 #
-if [ -d "/var/lib/osmiumcore/.osmiumcore" ]; then
-	BITCOIND_DEFAULT_DATADIR="/var/lib/osmiumcore/.osmiumcore"
+if [ -d "/var/lib/maximuscore/.maximuscore" ]; then
+	BITCOIND_DEFAULT_DATADIR="/var/lib/maximuscore/.maximuscore"
 else
-	BITCOIND_DEFAULT_DATADIR="/var/lib/osmiumd"
+	BITCOIND_DEFAULT_DATADIR="/var/lib/maximusd"
 fi
 
-BITCOIND_CONFIGFILE=${BITCOIND_CONFIGFILE:-/etc/osmiumcore/osmium.conf}
-BITCOIND_PIDDIR=${BITCOIND_PIDDIR:-/var/run/osmiumd}
-BITCOIND_PIDFILE=${BITCOIND_PIDFILE:-${BITCOIND_PIDDIR}/osmiumd.pid}
+BITCOIND_CONFIGFILE=${BITCOIND_CONFIGFILE:-/etc/maximuscore/maximus.conf}
+BITCOIND_PIDDIR=${BITCOIND_PIDDIR:-/var/run/maximusd}
+BITCOIND_PIDFILE=${BITCOIND_PIDFILE:-${BITCOIND_PIDDIR}/maximusd.pid}
 BITCOIND_DATADIR=${BITCOIND_DATADIR:-${BITCOIND_DEFAULT_DATADIR}}
-BITCOIND_USER=${BITCOIND_USER:-${BITCOIN_USER:-osmiumcore}}
-BITCOIND_GROUP=${BITCOIND_GROUP:-osmiumcore}
-BITCOIND_BIN=${BITCOIND_BIN:-/usr/bin/osmiumd}
+BITCOIND_USER=${BITCOIND_USER:-${BITCOIN_USER:-maximuscore}}
+BITCOIND_GROUP=${BITCOIND_GROUP:-maximuscore}
+BITCOIND_BIN=${BITCOIND_BIN:-/usr/bin/maximusd}
 BITCOIND_NICE=${BITCOIND_NICE:-${NICELEVEL:-0}}
 BITCOIND_OPTS="${BITCOIND_OPTS:-${BITCOIN_OPTS}}"
 
-name="Osmium Core Daemon"
-description="Osmium cryptocurrency P2P network daemon"
+name="Maximus Core Daemon"
+description="Maximus cryptocurrency P2P network daemon"
 
-command="/usr/bin/osmiumd"
+command="/usr/bin/maximusd"
 command_args="-pid=\"${BITCOIND_PIDFILE}\" \
 		-conf=\"${BITCOIND_CONFIGFILE}\" \
 		-datadir=\"${BITCOIND_DATADIR}\" \
@@ -72,7 +72,7 @@ checkconfig()
 	if grep -qs '^rpcuser=' "${BITCOIND_CONFIGFILE}" && \
 		! grep -qs '^rpcpassword=' "${BITCOIND_CONFIGFILE}" ; then
 		eerror ""
-		eerror "ERROR: You must set a secure rpcpassword to run osmiumd."
+		eerror "ERROR: You must set a secure rpcpassword to run maximusd."
 		eerror "The setting must appear in ${BITCOIND_CONFIGFILE}"
 		eerror ""
 		eerror "This password is security critical to securing wallets "
@@ -85,7 +85,7 @@ checkconfig()
 		eerror "It is recommended that you also set alertnotify so you are "
 		eerror "notified of problems:"
 		eerror ""
-		eerror "ie: alertnotify=echo %%s | mail -s \"Osmium Core Alert\"" \
+		eerror "ie: alertnotify=echo %%s | mail -s \"Maximus Core Alert\"" \
 			"admin@foo.com"
 		eerror ""
 		return 1

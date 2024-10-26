@@ -128,7 +128,7 @@ public Q_SLOTS:
     void requestedSyncWarningInfo();
 
 
-    /** Update selected OSMIUM amount from transactionview */
+    /** Update selected MAXIMUS amount from transactionview */
     void trxAmount(QString amount);
 Q_SIGNALS:
     void setPrivacy(bool privacy);

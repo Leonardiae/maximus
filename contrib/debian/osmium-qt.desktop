@@ -1,14 +1,14 @@
 [Desktop Entry]
 Version=1.0
-Name=Osmium Core
-Comment=Osmium P2P Cryptocurrency
-Comment[de]=Verbinde mit dem Osmium peer-to-peer Netzwerk
-Comment[fr]=Osmium, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=Osmium, eşten eşe kriptografik sanal para birimi
-Exec=osmium-qt %u
+Name=Maximus Core
+Comment=Maximus P2P Cryptocurrency
+Comment[de]=Verbinde mit dem Maximus peer-to-peer Netzwerk
+Comment[fr]=Maximus, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Maximus, eşten eşe kriptografik sanal para birimi
+Exec=maximus-qt %u
 Terminal=false
 Type=Application
-Icon=osmium128
-MimeType=x-scheme-handler/osmium;
+Icon=maximus128
+MimeType=x-scheme-handler/maximus;
 Categories=Office;Finance;P2P;Network;Qt;
-StartupWMClass=Osmium-qt
+StartupWMClass=Maximus-qt

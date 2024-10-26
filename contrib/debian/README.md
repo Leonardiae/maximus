@@ -1,21 +1,21 @@
 
 Debian
 ====================
-This directory contains files used to package osmiumd/osmium-qt
-for Debian-based Linux systems. If you compile osmiumd/osmium-qt yourself, there are some useful files here.
+This directory contains files used to package maximusd/maximus-qt
+for Debian-based Linux systems. If you compile maximusd/maximus-qt yourself, there are some useful files here.
 
-## osmium: URI support ##
+## maximus: URI support ##
 
 
-osmium-qt.desktop  (Gnome / Open Desktop)
+maximus-qt.desktop  (Gnome / Open Desktop)
 To install:
 
-	sudo desktop-file-install osmium-qt.desktop
+	sudo desktop-file-install maximus-qt.desktop
 	sudo update-desktop-database
 
 If you build yourself, you will either need to modify the paths in
-the .desktop file or copy or symlink your osmium-qt binary to `/usr/bin`
-and the `../../share/pixmaps/osmium128.png` to `/usr/share/pixmaps`
+the .desktop file or copy or symlink your maximus-qt binary to `/usr/bin`
+and the `../../share/pixmaps/maximus128.png` to `/usr/share/pixmaps`
 
-osmium-qt.protocol (KDE)
+maximus-qt.protocol (KDE)
 

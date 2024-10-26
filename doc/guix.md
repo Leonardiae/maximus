@@ -1,3 +1,3 @@
-# Bootstrappable Osmium Core Builds
+# Bootstrappable Maximus Core Builds
 
 See [contrib/guix/README.md](../contrib/guix/README.md)

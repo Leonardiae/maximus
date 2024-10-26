@@ -11,8 +11,8 @@
 class ArgsManager;
 
 /**
- * CBaseChainParams defines the base parameters (shared between osmium-cli and osmiumd)
- * of a given instance of the Osmium system.
+ * CBaseChainParams defines the base parameters (shared between maximus-cli and maximusd)
+ * of a given instance of the Maximus system.
  */
 class CBaseChainParams
 {

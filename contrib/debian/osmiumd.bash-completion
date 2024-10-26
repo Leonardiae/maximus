@@ -1,2 +1,2 @@
-contrib/osmiumd.bash-completion	osmiumd
-contrib/osmium-cli.bash-completion    osmium-cli
+contrib/maximusd.bash-completion	maximusd
+contrib/maximus-cli.bash-completion    maximus-cli

@@ -101,7 +101,7 @@ public:
         vOutpoints.assign(setSelected.begin(), setSelected.end());
     }
 
-    // Osmium-specific helpers
+    // Maximus-specific helpers
 
     void UseCoinJoin(bool fUseCoinJoin)
     {

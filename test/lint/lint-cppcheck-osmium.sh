@@ -47,7 +47,7 @@ IGNORED_WARNINGS=(
     "unusedStructMember"
 )
 
-# We should attempt to update this with all osmium specific code
+# We should attempt to update this with all maximus specific code
 FILES=$(git ls-files -- "src/batchedlogger.*" \
                         "src/bench/bls*.cpp" \
                         "src/bls/*.cpp" \

@@ -16,14 +16,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Osmium Core"
-            VALUE "FileDescription",    "osmium-wallet (CLI tool for " PACKAGE_NAME " wallets)"
+            VALUE "CompanyName",        "Maximus Core"
+            VALUE "FileDescription",    "maximus-wallet (CLI tool for " PACKAGE_NAME " wallets)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "osmium-wallet"
+            VALUE "InternalName",       "maximus-wallet"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "osmium-wallet.exe"
-            VALUE "ProductName",        "osmium-wallet"
+            VALUE "OriginalFilename",   "maximus-wallet.exe"
+            VALUE "ProductName",        "maximus-wallet"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

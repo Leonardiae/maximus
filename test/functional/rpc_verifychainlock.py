@@ -3,7 +3,7 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-from test_framework.test_framework import OsmiumTestFramework
+from test_framework.test_framework import MaximusTestFramework
 from test_framework.util import assert_equal, assert_raises_rpc_error
 
 '''
@@ -16,11 +16,11 @@ Test the following RPC:
 '''
 
 
-class RPCVerifyChainLockTest(OsmiumTestFramework):
+class RPCVerifyChainLockTest(MaximusTestFramework):
     def set_test_params(self):
         # -whitelist is needed to avoid the trickling logic on node0
-        self.set_osmium_test_params(5, 3, [["-whitelist=127.0.0.1"], [], [], [], []], fast_dip3_enforcement=True)
-        self.set_osmium_llmq_test_params(3, 2)
+        self.set_maximus_test_params(5, 3, [["-whitelist=127.0.0.1"], [], [], [], []], fast_dip3_enforcement=True)
+        self.set_maximus_llmq_test_params(3, 2)
 
     def cl_helper(self, height, chainlock, mempool):
         return {'height': height, 'chainlock': chainlock, 'mempool': mempool}

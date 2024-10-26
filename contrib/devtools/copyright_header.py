@@ -17,7 +17,7 @@ import os
 
 EXCLUDE = [
     # auto generated:
-    'src/qt/osmiumstrings.cpp',
+    'src/qt/maximusstrings.cpp',
     'src/chainparamsseeds.h',
     # other external copyrights:
     'src/bip39.cpp',
@@ -283,7 +283,7 @@ Usage:
     $ ./copyright_header.py report <base_directory> [verbose]
 
 Arguments:
-    <base_directory> - The base directory of a Osmium Core source code repository.
+    <base_directory> - The base directory of a Maximus Core source code repository.
     [verbose] - Includes a list of every file of each subcategory in the report.
 """
 
@@ -436,7 +436,7 @@ Usage:
     $ ./copyright_header.py update <base_directory>
 
 Arguments:
-    <base_directory> - The base directory of Osmium Core source code repository.
+    <base_directory> - The base directory of Maximus Core source code repository.
 """
 
 def print_file_action_message(filename, action):
@@ -559,7 +559,7 @@ Usage:
     $ ./copyright_header.py insert <file>
 
 Arguments:
-    <file> - A source file in the Osmium Core repository.
+    <file> - A source file in the Maximus Core repository.
 """
 
 def insert_cmd(argv):
@@ -586,7 +586,7 @@ def insert_cmd(argv):
 ################################################################################
 
 USAGE = """
-copyright_header.py - utilities for managing copyright headers of 'The Osmium
+copyright_header.py - utilities for managing copyright headers of 'The Maximus
 Core developers' in repository source files.
 
 Usage:

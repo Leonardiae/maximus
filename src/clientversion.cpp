@@ -9,10 +9,10 @@
 
 /**
  * Name of client reported in the 'version' message. Report the same name
- * for both osmiumd and osmium-qt, to make it harder for attackers to
+ * for both maximusd and maximus-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("Osmium Core");
+const std::string CLIENT_NAME("Maximus Core");
 
 
 #ifdef HAVE_BUILD_INFO

@@ -44,7 +44,7 @@ class CDeterministicMNList;
 class CGovernanceObject;
 typedef std::shared_ptr<CDeterministicMNList> CDeterministicMNListPtr;
 
-/** Model for Osmium network client. */
+/** Model for Maximus network client. */
 class ClientModel : public QObject
 {
     Q_OBJECT

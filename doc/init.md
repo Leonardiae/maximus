@@ -1,36 +1,36 @@
-Sample init scripts and service configuration for osmiumd
+Sample init scripts and service configuration for maximusd
 ==========================================================
 
 Sample scripts and configuration files for systemd, Upstart and OpenRC
 can be found in the contrib/init folder.
 
-    contrib/init/osmiumd.service:    systemd service unit configuration
-    contrib/init/osmiumd.openrc:     OpenRC compatible SysV style init script
-    contrib/init/osmiumd.openrcconf: OpenRC conf.d file
-    contrib/init/osmiumd.conf:       Upstart service configuration file
-    contrib/init/osmiumd.init:       CentOS compatible SysV style init script
+    contrib/init/maximusd.service:    systemd service unit configuration
+    contrib/init/maximusd.openrc:     OpenRC compatible SysV style init script
+    contrib/init/maximusd.openrcconf: OpenRC conf.d file
+    contrib/init/maximusd.conf:       Upstart service configuration file
+    contrib/init/maximusd.init:       CentOS compatible SysV style init script
 
 Service User
 ---------------------------------
 
-All three Linux startup configurations assume the existence of a "osmiumcore" user
+All three Linux startup configurations assume the existence of a "maximuscore" user
 and group.  They must be created before attempting to use these scripts.
-The macOS configuration assumes osmiumd will be set up for the current user.
+The macOS configuration assumes maximusd will be set up for the current user.
 
 Configuration
 ---------------------------------
 
-Running osmiumd as a daemon does not require any manual configuration. You may
-set the `rpcauth` setting in the `osmium.conf` configuration file to override
+Running maximusd as a daemon does not require any manual configuration. You may
+set the `rpcauth` setting in the `maximus.conf` configuration file to override
 the default behaviour of using a special cookie for authentication.
 
 This password does not have to be remembered or typed as it is mostly used
-as a fixed token that osmiumd and client programs read from the configuration
+as a fixed token that maximusd and client programs read from the configuration
 file, however it is recommended that a strong and secure password be used
 as this password is security critical to securing the wallet should the
 wallet be enabled.
 
-If osmiumd is run with the "-server" flag (set by default), and no rpcpassword is set,
+If maximusd is run with the "-server" flag (set by default), and no rpcpassword is set,
 it will use a special cookie file for authentication. The cookie is generated with random
 content when the daemon starts, and deleted when it exits. Read access to this file
 controls who can access it through RPC.
@@ -38,13 +38,13 @@ controls who can access it through RPC.
 By default the cookie is stored in the data directory, but it's location can be overridden
 with the option '-rpccookiefile'.
 
-This allows for running osmiumd without having to do any manual configuration.
+This allows for running maximusd without having to do any manual configuration.
 
 `conf`, `pid`, and `wallet` accept relative paths which are interpreted as
 relative to the data directory. `wallet` *only* supports relative paths.
 
 For an example configuration file that describes the configuration settings,
-see `contrib/debian/examples/osmium.conf`.
+see `contrib/debian/examples/maximus.conf`.
 
 Paths
 ---------------------------------
@@ -53,40 +53,40 @@ Paths
 
 All three configurations assume several paths that might need to be adjusted.
 
-Binary:              `/usr/bin/osmiumd`
-Configuration file:  `/etc/osmiumcore/osmium.conf`
-Data directory:      `/var/lib/osmiumd`
-PID file:            `/var/run/osmiumd/osmiumd.pid` (OpenRC and Upstart) or `/run/osmiumd/osmiumd.pid` (systemd)
-Lock file:           `/var/lock/subsys/osmiumd` (CentOS)
+Binary:              `/usr/bin/maximusd`
+Configuration file:  `/etc/maximuscore/maximus.conf`
+Data directory:      `/var/lib/maximusd`
+PID file:            `/var/run/maximusd/maximusd.pid` (OpenRC and Upstart) or `/run/maximusd/maximusd.pid` (systemd)
+Lock file:           `/var/lock/subsys/maximusd` (CentOS)
 
 The PID directory (if applicable) and data directory should both be owned by the
-osmiumcore user and group. It is advised for security reasons to make the
-configuration file and data directory only readable by the osmiumcore user and
-group. Access to osmium-cli and other osmiumd rpc clients can then be
+maximuscore user and group. It is advised for security reasons to make the
+configuration file and data directory only readable by the maximuscore user and
+group. Access to maximus-cli and other maximusd rpc clients can then be
 controlled by group membership.
 
 NOTE: When using the systemd .service file, the creation of the aforementioned
 directories and the setting of their permissions is automatically handled by
-systemd. Directories are given a permission of 710, giving the osmiumcore user and group
+systemd. Directories are given a permission of 710, giving the maximuscore user and group
 access to files under it _if_ the files themselves give permission to the
-osmiumcore user and group to do so (e.g. when `-sysperms` is specified). This does not allow
+maximuscore user and group to do so (e.g. when `-sysperms` is specified). This does not allow
 for the listing of files under the directory.
 
 NOTE: It is not currently possible to override `datadir` in
-`/etc/osmium/osmium.conf` with the current systemd, OpenRC, and Upstart init
+`/etc/maximus/maximus.conf` with the current systemd, OpenRC, and Upstart init
 files out-of-the-box. This is because the command line options specified in the
 init files take precedence over the configurations in
-`/etc/osmium/osmium.conf`. However, some init systems have their own
+`/etc/maximus/maximus.conf`. However, some init systems have their own
 configuration mechanisms that would allow for overriding the command line
 options specified in the init files (e.g. setting `BITCOIND_DATADIR` for
 OpenRC).
 
 ### macOS
 
-Binary:              `/usr/local/bin/osmiumd`
-Configuration file:  `~/Library/Application Support/OsmiumCore/osmium.conf`
-Data directory:      `~/Library/Application Support/OsmiumCore`
-Lock file:           `~/Library/Application Support/OsmiumCore/.lock`
+Binary:              `/usr/local/bin/maximusd`
+Configuration file:  `~/Library/Application Support/MaximusCore/maximus.conf`
+Data directory:      `~/Library/Application Support/MaximusCore`
+Lock file:           `~/Library/Application Support/MaximusCore/.lock`
 
 Installing Service Configuration
 -----------------------------------
@@ -97,23 +97,23 @@ Installing this .service file consists of just copying it to
 /usr/lib/systemd/system directory, followed by the command
 `systemctl daemon-reload` in order to update running systemd configuration.
 
-To test, run `systemctl start osmiumd` and to enable for system startup run
-`systemctl enable osmiumd`
+To test, run `systemctl start maximusd` and to enable for system startup run
+`systemctl enable maximusd`
 
 NOTE: When installing for systemd in Debian/Ubuntu the .service file needs to be copied to the /lib/systemd/system directory instead.
 
 ### OpenRC
 
-Rename osmiumd.openrc to osmiumd and drop it in /etc/init.d.  Double
+Rename maximusd.openrc to maximusd and drop it in /etc/init.d.  Double
 check ownership and permissions and make it executable.  Test it with
-`/etc/init.d/osmiumd start` and configure it to run on startup with
-`rc-update add osmiumd`
+`/etc/init.d/maximusd start` and configure it to run on startup with
+`rc-update add maximusd`
 
 ### Upstart (for Debian/Ubuntu based distributions)
 
 Upstart is the default init system for Debian/Ubuntu versions older than 15.04. If you are using version 15.04 or newer and haven't manually configured upstart you should follow the systemd instructions instead.
 
-Drop osmiumd.conf in /etc/init.  Test by running `service osmiumd start`
+Drop maximusd.conf in /etc/init.  Test by running `service maximusd start`
 it will automatically start on reboot.
 
 NOTE: This script is incompatible with CentOS 5 and Amazon Linux 2014 as they
@@ -121,22 +121,22 @@ use old versions of Upstart and do not supply the start-stop-daemon utility.
 
 ### CentOS
 
-Copy osmiumd.init to /etc/init.d/osmiumd. Test by running `service osmiumd start`.
+Copy maximusd.init to /etc/init.d/maximusd. Test by running `service maximusd start`.
 
-Using this script, you can adjust the path and flags to the osmiumd program by
-setting the OSMIUMD and FLAGS environment variables in the file
-/etc/sysconfig/osmiumd. You can also use the DAEMONOPTS environment variable here.
+Using this script, you can adjust the path and flags to the maximusd program by
+setting the MAXIMUSD and FLAGS environment variables in the file
+/etc/sysconfig/maximusd. You can also use the DAEMONOPTS environment variable here.
 
 ### macOS
 
-Copy org.osmium.osmiumd.plist into ~/Library/LaunchAgents. Load the launch agent by
-running `launchctl load ~/Library/LaunchAgents/org.osmium.osmiumd.plist`.
+Copy org.maximus.maximusd.plist into ~/Library/LaunchAgents. Load the launch agent by
+running `launchctl load ~/Library/LaunchAgents/org.maximus.maximusd.plist`.
 
-This Launch Agent will cause osmiumd to start whenever the user logs in.
+This Launch Agent will cause maximusd to start whenever the user logs in.
 
-NOTE: This approach is intended for those wanting to run osmiumd as the current user.
-You will need to modify org.osmium.osmiumd.plist if you intend to use it as a
-Launch Daemon with a dedicated osmiumcore user.
+NOTE: This approach is intended for those wanting to run maximusd as the current user.
+You will need to modify org.maximus.maximusd.plist if you intend to use it as a
+Launch Daemon with a dedicated maximuscore user.
 
 Auto-respawn
 -----------------------------------

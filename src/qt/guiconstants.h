@@ -14,10 +14,10 @@ static const int MODEL_UPDATE_DELAY = 250;
 /* AskPassphraseDialog -- Maximum passphrase length */
 static const int MAX_PASSPHRASE_SIZE = 1024;
 
-/* OsmiumGUI -- Size of icons in status bar */
+/* MaximusGUI -- Size of icons in status bar */
 static const int STATUSBAR_ICONSIZE = 18;
 
-/* OsmiumGUI -- Size of button icons e.g. in SendCoinEntry or SignVerifyMessageDialog */
+/* MaximusGUI -- Size of button icons e.g. in SendCoinEntry or SignVerifyMessageDialog */
 static const int BUTTON_ICONSIZE = 23;
 
 static const bool DEFAULT_SPLASHSCREEN = true;
@@ -35,12 +35,12 @@ static const int TOOLTIP_WRAP_THRESHOLD = 80;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 90
 
-#define QAPP_ORG_NAME "Osmium"
-#define QAPP_ORG_DOMAIN "osmium.space"
-#define QAPP_APP_NAME_DEFAULT "Osmium-Qt"
-#define QAPP_APP_NAME_TESTNET "Osmium-Qt-testnet"
-#define QAPP_APP_NAME_DEVNET "Osmium-Qt-%s"
-#define QAPP_APP_NAME_REGTEST "Osmium-Qt-regtest"
+#define QAPP_ORG_NAME "Maximus"
+#define QAPP_ORG_DOMAIN "maximus.space"
+#define QAPP_APP_NAME_DEFAULT "Maximus-Qt"
+#define QAPP_APP_NAME_TESTNET "Maximus-Qt-testnet"
+#define QAPP_APP_NAME_DEVNET "Maximus-Qt-%s"
+#define QAPP_APP_NAME_REGTEST "Maximus-Qt-regtest"
 
 /* One gigabyte (GB) in bytes */
 static constexpr uint64_t GB_BYTES{1000000000};

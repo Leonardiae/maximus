@@ -47,7 +47,7 @@ class Loader;
 } //namespsace CoinJoin
 struct BlockTip;
 
-//! Interface for the src/evo part of a osmium node (osmiumd process).
+//! Interface for the src/evo part of a maximus node (maximusd process).
 class EVO
 {
 public:
@@ -56,7 +56,7 @@ public:
     virtual void setContext(NodeContext* context) {}
 };
 
-//! Interface for the src/governance part of a osmium node (osmiumd process).
+//! Interface for the src/governance part of a maximus node (maximusd process).
 class GOV
 {
 public:
@@ -67,7 +67,7 @@ public:
     virtual void setContext(NodeContext* context) {}
 };
 
-//! Interface for the src/llmq part of a osmium node (osmiumd process).
+//! Interface for the src/llmq part of a maximus node (maximusd process).
 class LLMQ
 {
 public:
@@ -76,7 +76,7 @@ public:
     virtual void setContext(NodeContext* context) {}
 };
 
-//! Interface for the src/masternode part of a osmium node (osmiumd process).
+//! Interface for the src/masternode part of a maximus node (maximusd process).
 namespace Masternode
 {
 class Sync
@@ -132,7 +132,7 @@ struct BlockAndHeaderTipInfo
     double verification_progress;
 };
 
-//! Top-level interface for a osmium node (osmiumd process).
+//! Top-level interface for a maximus node (maximusd process).
 class Node
 {
 public:

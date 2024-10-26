@@ -22,9 +22,9 @@ BitcoinUnits::BitcoinUnits(QObject *parent):
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(OSMIUM);
-    unitlist.append(mOSMIUM);
-    unitlist.append(uOSMIUM);
+    unitlist.append(MAXIMUS);
+    unitlist.append(mMAXIMUS);
+    unitlist.append(uMAXIMUS);
     unitlist.append(muffs);
     return unitlist;
 }
@@ -33,9 +33,9 @@ bool BitcoinUnits::valid(int unit)
 {
     switch(unit)
     {
-    case OSMIUM:
-    case mOSMIUM:
-    case uOSMIUM:
+    case MAXIMUS:
+    case mMAXIMUS:
+    case uMAXIMUS:
     case muffs:
         return true;
     default:
@@ -49,9 +49,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case OSMIUM: return QString("OSMI");
-            case mOSMIUM: return QString("mOSMI");
-            case uOSMIUM: return QString::fromUtf8("μOSMI");
+            case MAXIMUS: return QString("MAXI");
+            case mMAXIMUS: return QString("mMAXI");
+            case uMAXIMUS: return QString::fromUtf8("μMAXI");
             case muffs: return QString("muffs");
             default: return QString("???");
         }
@@ -60,9 +60,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case OSMIUM: return QString("tOSMI");
-            case mOSMIUM: return QString("mtOSMI");
-            case uOSMIUM: return QString::fromUtf8("μtOSMI");
+            case MAXIMUS: return QString("tMAXI");
+            case mMAXIMUS: return QString("mtMAXI");
+            case uMAXIMUS: return QString::fromUtf8("μtMAXI");
             case muffs: return QString("tmuffs");
             default: return QString("???");
         }
@@ -75,10 +75,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case OSMIUM: return QString("Osmium");
-            case mOSMIUM: return QString("Milli-Osmium (1 / 1" THIN_SP_UTF8 "000)");
-            case uOSMIUM: return QString("Micro-Osmium (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case muffs: return QString("Ten Nano-Osmium (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case MAXIMUS: return QString("Maximus");
+            case mMAXIMUS: return QString("Milli-Maximus (1 / 1" THIN_SP_UTF8 "000)");
+            case uMAXIMUS: return QString("Micro-Maximus (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case muffs: return QString("Ten Nano-Maximus (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -86,10 +86,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case OSMIUM: return QString("TestOsmiums");
-            case mOSMIUM: return QString("Milli-TestOsmium (1 / 1" THIN_SP_UTF8 "000)");
-            case uOSMIUM: return QString("Micro-TestOsmium (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case muffs: return QString("Ten Nano-TestOsmium (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case MAXIMUS: return QString("TestMaximuss");
+            case mMAXIMUS: return QString("Milli-TestMaximus (1 / 1" THIN_SP_UTF8 "000)");
+            case uMAXIMUS: return QString("Micro-TestMaximus (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case muffs: return QString("Ten Nano-TestMaximus (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -99,9 +99,9 @@ qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case OSMIUM:  return 100000000;
-    case mOSMIUM: return 100000;
-    case uOSMIUM: return 100;
+    case MAXIMUS:  return 100000000;
+    case mMAXIMUS: return 100000;
+    case uMAXIMUS: return 100;
     case muffs: return 1;
     default:   return 100000000;
     }
@@ -111,9 +111,9 @@ int BitcoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case OSMIUM: return 8;
-    case mOSMIUM: return 5;
-    case uOSMIUM: return 2;
+    case MAXIMUS: return 8;
+    case mMAXIMUS: return 5;
+    case uMAXIMUS: return 2;
     case muffs: return 0;
     default: return 0;
     }

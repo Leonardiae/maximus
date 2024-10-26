@@ -31,14 +31,14 @@ RUN apt-get update && \
 # unconditionally returns 0
 #
 RUN groupadd docker && \
-    usermod -aG sudo osmium && \
+    usermod -aG sudo maximus && \
     echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 # Disable noninteractive mode
 ENV DEBIAN_FRONTEND="dialog"
 
-# Expose Osmium P2P and RPC ports for main network and test networks
+# Expose Maximus P2P and RPC ports for main network and test networks
 EXPOSE 9968 9969 19968 19969
 
 # We're done, switch back to non-privileged user
-USER osmium
+USER maximus

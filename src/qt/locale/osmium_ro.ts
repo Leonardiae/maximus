@@ -70,12 +70,12 @@
         <translation>Adresa de primire</translation>
     </message>
     <message>
-        <source>These are your Osmium addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Acestea sunt adresele tale Osmium pentru efectuarea platilor. Intotdeauna verifica atent suma de plata si adresa beneficiarului inainte de a trimite monede.</translation>
+        <source>These are your Maximus addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Acestea sunt adresele tale Maximus pentru efectuarea platilor. Intotdeauna verifica atent suma de plata si adresa beneficiarului inainte de a trimite monede.</translation>
     </message>
     <message>
-        <source>These are your Osmium addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Acestea sunt adresele tale Osmium pentru receptionarea platilor. Este recomandat sa folosesti mereu o adresa noua pentru primirea platilor.</translation>
+        <source>These are your Maximus addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Acestea sunt adresele tale Maximus pentru receptionarea platilor. Este recomandat sa folosesti mereu o adresa noua pentru primirea platilor.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -191,8 +191,8 @@
         <translation>Confirmaţi criptarea portofelului</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR OSMIUM&lt;/b&gt;!</source>
-        <translation>Avertisment: dacă criptezi portofelul și pierzi fraza de acces, vei &lt;b&gt;PIERDE TOATE MONEDELE TALE OSMIUM&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR MAXIMUS&lt;/b&gt;!</source>
+        <translation>Avertisment: dacă criptezi portofelul și pierzi fraza de acces, vei &lt;b&gt;PIERDE TOATE MONEDELE TALE MAXIMUS&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -260,12 +260,12 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <source>A fatal error occurred. Osmium Core can no longer continue safely and will quit.</source>
-        <translation>A apărut o eroare fatală. Osmium Core nu mai poate continua în siguranță și se va opri.</translation>
+        <source>A fatal error occurred. Maximus Core can no longer continue safely and will quit.</source>
+        <translation>A apărut o eroare fatală. Maximus Core nu mai poate continua în siguranță și se va opri.</translation>
     </message>
     <message>
-        <source>Osmium Core</source>
-        <translation>Osmium Core</translation>
+        <source>Maximus Core</source>
+        <translation>Maximus Core</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -288,16 +288,16 @@
         <translation>Trimite</translation>
     </message>
     <message>
-        <source>Send coins to a Osmium address</source>
-        <translation>Trimite monede către o adresă Osmium</translation>
+        <source>Send coins to a Maximus address</source>
+        <translation>Trimite monede către o adresă Maximus</translation>
     </message>
     <message>
         <source>&amp;Receive</source>
         <translation>P&amp;rimeşte</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and osmium: URIs)</source>
-        <translation>Cereţi plăţi (generează coduri QR şi Osmium-uri: URls)</translation>
+        <source>Request payments (generates QR codes and maximus: URIs)</source>
+        <translation>Cereţi plăţi (generează coduri QR şi Maximus-uri: URls)</translation>
     </message>
     <message>
         <source>&amp;Transactions</source>
@@ -324,8 +324,8 @@
         <translation>Închide aplicaţia</translation>
     </message>
     <message>
-        <source>Show information about Osmium Core</source>
-        <translation>Arată informații despre Osmium Core</translation>
+        <source>Show information about Maximus Core</source>
+        <translation>Arată informații despre Maximus Core</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -396,16 +396,16 @@
         <translation>Semnează &amp;mesaj...</translation>
     </message>
     <message>
-        <source>Sign messages with your Osmium addresses to prove you own them</source>
-        <translation>Semnaţi mesaje cu adresa dvs. Osmium pentru a dovedi că vă aparţin</translation>
+        <source>Sign messages with your Maximus addresses to prove you own them</source>
+        <translation>Semnaţi mesaje cu adresa dvs. Maximus pentru a dovedi că vă aparţin</translation>
     </message>
     <message>
         <source>&amp;Verify message...</source>
         <translation>&amp;Verifică mesaj...</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Osmium addresses</source>
-        <translation>Verificaţi mesaje pentru a vă asigura că au fost semnate cu adresa Osmium specificată</translation>
+        <source>Verify messages to ensure they were signed with specified Maximus addresses</source>
+        <translation>Verificaţi mesaje pentru a vă asigura că au fost semnate cu adresa Maximus specificată</translation>
     </message>
     <message>
         <source>&amp;Information</source>
@@ -484,16 +484,16 @@
         <translation>Deschide &amp;URI...</translation>
     </message>
     <message>
-        <source>Open a osmium: URI or payment request</source>
-        <translation>Deschidere Osmium: o adresa URI sau o cerere de plată</translation>
+        <source>Open a maximus: URI or payment request</source>
+        <translation>Deschidere Maximus: o adresa URI sau o cerere de plată</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>Opţiuni linie de &amp;comandă</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Osmium command-line options</source>
-        <translation>Arată mesajul de ajutor %1 pentru a obţine o listă cu opţiunile posibile de linii de comandă Osmium</translation>
+        <source>Show the %1 help message to get a list with possible Maximus command-line options</source>
+        <translation>Arată mesajul de ajutor %1 pentru a obţine o listă cu opţiunile posibile de linii de comandă Maximus</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -520,8 +520,8 @@
         <translation>Bara de file</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Osmium network</source>
-        <translation><numerusform>%n conexiune activă la rețeaua Osmium</numerusform><numerusform>%n conexiuni active la rețeaua Osmium</numerusform><numerusform>%n conexiuni active la rețeaua Osmium </numerusform></translation>
+        <source>%n active connection(s) to Maximus network</source>
+        <translation><numerusform>%n conexiune activă la rețeaua Maximus</numerusform><numerusform>%n conexiuni active la rețeaua Maximus</numerusform><numerusform>%n conexiuni active la rețeaua Maximus </numerusform></translation>
     </message>
     <message>
         <source>Network activity disabled</source>
@@ -872,8 +872,8 @@
         <translation>Editează adresa de trimitere</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Osmium address.</source>
-        <translation>Adresa introdusă "%1" nu este o adresă Osmium validă</translation>
+        <source>The entered address "%1" is not a valid Maximus address.</source>
+        <translation>Adresa introdusă "%1" nu este o adresă Maximus validă</translation>
     </message>
     <message>
         <source>The entered address "%1" is already in the address book.</source>
@@ -973,8 +973,8 @@
         <translation>Aproximativ %1 GB de date vor fi stocate in acest director.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Osmium block chain.</source>
-        <translation>%1 va descarca si stoca o copie a blockchainului Osmium</translation>
+        <source>%1 will download and store a copy of the Maximus block chain.</source>
+        <translation>%1 va descarca si stoca o copie a blockchainului Maximus</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1119,12 +1119,12 @@
         <translation>Form</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Osmium network, as detailed below.</source>
-        <translation>Tranzactiile recente pot sa nu fie inca vizibile, de aceea balanta portofelului poate fi incorecta. Aceasta informatie va fi corecta de indata ce portofelul va fi complet sincronizat cu reteaua Osmium, asa cum este detaliat mai jos.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Maximus network, as detailed below.</source>
+        <translation>Tranzactiile recente pot sa nu fie inca vizibile, de aceea balanta portofelului poate fi incorecta. Aceasta informatie va fi corecta de indata ce portofelul va fi complet sincronizat cu reteaua Maximus, asa cum este detaliat mai jos.</translation>
     </message>
     <message>
-        <source>Attempting to spend Osmium that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>Încercarea de a cheltui monede Osmium care sunt afectate de tranzacțiile care nu au fost încă afișate nu va fi acceptată de rețea.</translation>
+        <source>Attempting to spend Maximus that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>Încercarea de a cheltui monede Maximus care sunt afectate de tranzacțiile care nu au fost încă afișate nu va fi acceptată de rețea.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1229,12 +1229,12 @@
         <translation>Dacă dezactivezi cheltuirea restului neconfirmat, restul dintr-o tranzacție&lt;br/&gt;nu poate fi utilizat până când tranzacția nu are cel puțin o confirmare.&lt;br/&gt;Acest lucru afectează de asemenea modul în care se calculează soldul tău.</translation>
     </message>
     <message>
-        <source>Automatically open the Osmium Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Deschide automat portul client Osmium Core de pe router. Asta funcționează numai atunci când routerul dvs. acceptă UPnP și este activat.</translation>
+        <source>Automatically open the Maximus Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Deschide automat portul client Maximus Core de pe router. Asta funcționează numai atunci când routerul dvs. acceptă UPnP și este activat.</translation>
     </message>
     <message>
-        <source>Connect to the Osmium network through a SOCKS5 proxy.</source>
-        <translation>Conectare la reţeaua Osmium printr-un proxy SOCKS.</translation>
+        <source>Connect to the Maximus network through a SOCKS5 proxy.</source>
+        <translation>Conectare la reţeaua Maximus printr-un proxy SOCKS.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1317,8 +1317,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Osmium network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Conectare la reteaua Osmium printr-un proxy SOCKS5 separat pentru serviciile TOR ascunse.</translation>
+        <source>Connect to the Maximus network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Conectare la reteaua Maximus printr-un proxy SOCKS5 separat pentru serviciile TOR ascunse.</translation>
     </message>
     <message>
         <source>Show only a tray icon after minimizing the window.</source>
@@ -1346,9 +1346,9 @@
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/projects/p/osmium/</source>
+https://www.transifex.com/projects/p/maximus/</source>
         <translation>Limba lipsă sau traducerea incompletă? Ajută contribuind traduceri aici:
-https://www.transifex.com/projects/p/osmium/</translation>
+https://www.transifex.com/projects/p/maximus/</translation>
     </message>
     <message>
         <source>&amp;Unit to show amounts in:</source>
@@ -1414,8 +1414,8 @@ https://www.transifex.com/projects/p/osmium/</translation>
         <translation>Form</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Osmium network after a connection is established, but this process has not completed yet.</source>
-        <translation>Informatia afisata poate fi depasita.  Portofel se sincronizează automat cu rețeaua Osmium după ce se stabilește o conexiune, dar acest proces nu s-a finalizat încă.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Maximus network after a connection is established, but this process has not completed yet.</source>
+        <translation>Informatia afisata poate fi depasita.  Portofel se sincronizează automat cu rețeaua Maximus după ce se stabilește o conexiune, dar acest proces nu s-a finalizat încă.</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -1494,8 +1494,8 @@ https://www.transifex.com/projects/p/osmium/</translation>
         <translation>Suma și Runde:</translation>
     </message>
     <message>
-        <source>0 OSMIUM / 0 Rounds</source>
-        <translation>0 OSMIUM / 0 Runde</translation>
+        <source>0 MAXIMUS / 0 Rounds</source>
+        <translation>0 MAXIMUS / 0 Runde</translation>
     </message>
     <message>
         <source>Submitted Denom:</source>
@@ -1605,8 +1605,8 @@ https://www.transifex.com/projects/p/osmium/</translation>
         <translation>Eroare la cererea de plată</translation>
     </message>
     <message>
-        <source>Cannot start osmium: click-to-pay handler</source>
-        <translation>Osmium nu poate porni: click-to-pay handler</translation>
+        <source>Cannot start maximus: click-to-pay handler</source>
+        <translation>Maximus nu poate porni: click-to-pay handler</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -1621,8 +1621,8 @@ https://www.transifex.com/projects/p/osmium/</translation>
         <translation>Adresă pentru plată invalidă %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Osmium address or malformed URI parameters.</source>
-        <translation>URI nu poate fi analizat! Acest lucru poate fi cauzat de o adresă Osmium invalidă sau parametri URI deformaţi.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Maximus address or malformed URI parameters.</source>
+        <translation>URI nu poate fi analizat! Acest lucru poate fi cauzat de o adresă Maximus invalidă sau parametri URI deformaţi.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1719,8 +1719,8 @@ https://www.transifex.com/projects/p/osmium/</translation>
         <translation>Cantitate</translation>
     </message>
     <message>
-        <source>Enter a Osmium address (e.g. %1)</source>
-        <translation>Introduceţi o adresă Osmium (de exemplu %1)</translation>
+        <source>Enter a Maximus address (e.g. %1)</source>
+        <translation>Introduceţi o adresă Maximus (de exemplu %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2205,8 +2205,8 @@ https://www.transifex.com/projects/p/osmium/</translation>
 <context>
     <name>ReceiveCoinsDialog</name>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Osmium network.</source>
-        <translation>Un mesaj opţional de ataşat la cererea de plată, care va fi afişat cînd cererea este deschisă. Notă: Acest mesaj nu va fi trimis cu plata către reţeaua Osmium.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Maximus network.</source>
+        <translation>Un mesaj opţional de ataşat la cererea de plată, care va fi afişat cînd cererea este deschisă. Notă: Acest mesaj nu va fi trimis cu plata către reţeaua Maximus.</translation>
     </message>
     <message>
         <source>&amp;Message:</source>
@@ -2217,8 +2217,8 @@ https://www.transifex.com/projects/p/osmium/</translation>
         <translation>O etichetă opţională de asociat cu adresa de primire.</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Osmium network.</source>
-        <translation>Un mesaj opțional pentru a atașa solicitării de plată, care va fi afișat la deschiderea cererii.&lt;br&gt;Notă: mesajul nu va fi trimis cu plata prin rețeaua Osmium.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Maximus network.</source>
+        <translation>Un mesaj opțional pentru a atașa solicitării de plată, care va fi afișat la deschiderea cererii.&lt;br&gt;Notă: mesajul nu va fi trimis cu plata prin rețeaua Maximus.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -2450,8 +2450,8 @@ https://www.transifex.com/projects/p/osmium/</translation>
         <translation>Dacă taxa vamală este stabilită la 1000 de muffi și tranzacția are doar 250 de octeți, atunci "per kilobyte" plătește doar 250 de muffi în taxă,&lt;br /&gt;în timp ce "cel puțin" plătește 1000 de muffi. Pentru tranzacțiile mai mari decât un kilobyte, ambele plătesc cu kilobyte.</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for osmium transactions than the network can process.</source>
-        <translation>Plata numai a taxei minime este ok, atâta timp cât există un volum mai mic de tranzacții decât spațiul din block-uri.&lt;br /&gt;Dar trebuie să știi că acest lucru se poate încheia într-o tranzacție care nu se confirmă odată ce există mai multă cerere pentru tranzacții osmium decât poate procesa rețeaua.</translation>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for maximus transactions than the network can process.</source>
+        <translation>Plata numai a taxei minime este ok, atâta timp cât există un volum mai mic de tranzacții decât spațiul din block-uri.&lt;br /&gt;Dar trebuie să știi că acest lucru se poate încheia într-o tranzacție care nu se confirmă odată ce există mai multă cerere pentru tranzacții maximus decât poate procesa rețeaua.</translation>
     </message>
     <message>
         <source>per kilobyte</source>
@@ -2634,8 +2634,8 @@ https://www.transifex.com/projects/p/osmium/</translation>
         <translation><numerusform>Înceaperea confirmării estimată într-un %n block.</numerusform><numerusform>Înceaperea confirmării estimată în %n block-uri.</numerusform><numerusform>Înceaperea confirmării estimată în %n block-uri.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid Osmium address</source>
-        <translation>Atenţie: Adresa Osmium nevalidă!</translation>
+        <source>Warning: Invalid Maximus address</source>
+        <translation>Atenţie: Adresa Maximus nevalidă!</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2665,8 +2665,8 @@ https://www.transifex.com/projects/p/osmium/</translation>
         <translation>Plăteşte că&amp;tre:</translation>
     </message>
     <message>
-        <source>The Osmium address to send the payment to</source>
-        <translation>Adresa Osmium către care se face plata</translation>
+        <source>The Maximus address to send the payment to</source>
+        <translation>Adresa Maximus către care se face plata</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2701,8 +2701,8 @@ https://www.transifex.com/projects/p/osmium/</translation>
         <translation>Su&amp;mă:</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of Osmium than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>Taxa va fi dedusă din suma trimisă. Destinatarul va primi o sumă mai mică de Osmium decât introduci în câmpul pentru suma. Dacă sunt selectați mai mulți destinatari, taxa este împărțită în mod egal.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of Maximus than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>Taxa va fi dedusă din suma trimisă. Destinatarul va primi o sumă mai mică de Maximus decât introduci în câmpul pentru suma. Dacă sunt selectați mai mulți destinatari, taxa este împărțită în mod egal.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -2713,8 +2713,8 @@ https://www.transifex.com/projects/p/osmium/</translation>
         <translation>Mesaj:</translation>
     </message>
     <message>
-        <source>A message that was attached to the osmium: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Osmium network.</source>
-        <translation>un mesaj a fost ataşat la Osmium: URI care va fi stocat cu tranzacţia pentru referinţa dvs. Notă: Acest mesaj nu va fi trimis către reţeaua Osmium.</translation>
+        <source>A message that was attached to the maximus: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Maximus network.</source>
+        <translation>un mesaj a fost ataşat la Maximus: URI care va fi stocat cu tranzacţia pentru referinţa dvs. Notă: Acest mesaj nu va fi trimis către reţeaua Maximus.</translation>
     </message>
     <message>
         <source>This is an unauthenticated payment request.</source>
@@ -2766,11 +2766,11 @@ https://www.transifex.com/projects/p/osmium/</translation>
         <translation>&amp;Semnează mesaj</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive Osmium sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>Poți semna mesaje / acorduri cu adreseletale pentru a dovedi că poți primi Osmium trimis la ele. Ai grijă să nu semnezi nimic vag sau întâmplător, deoarece atacurile de tip phishing pot încerca să te păcălească să le dai identitatea ta. Semnează declarații complet-detaliate cu care ești de acord.</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive Maximus sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation>Poți semna mesaje / acorduri cu adreseletale pentru a dovedi că poți primi Maximus trimis la ele. Ai grijă să nu semnezi nimic vag sau întâmplător, deoarece atacurile de tip phishing pot încerca să te păcălească să le dai identitatea ta. Semnează declarații complet-detaliate cu care ești de acord.</translation>
     </message>
     <message>
-        <source>The Osmium address to sign the message with</source>
+        <source>The Maximus address to sign the message with</source>
         <translation>Adresa cu care semnaţi mesajul</translation>
     </message>
     <message>
@@ -2802,8 +2802,8 @@ https://www.transifex.com/projects/p/osmium/</translation>
         <translation>Copiaza semnatura curenta in clipboard-ul sistemului</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Osmium address</source>
-        <translation>Semnează mesajul pentru a dovedi ca deţineţi acestă adresă Osmium</translation>
+        <source>Sign the message to prove you own this Maximus address</source>
+        <translation>Semnează mesajul pentru a dovedi ca deţineţi acestă adresă Maximus</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2826,12 +2826,12 @@ https://www.transifex.com/projects/p/osmium/</translation>
         <translation>Introduceţi adresa de semnatură, mesajul (asiguraţi-vă că aţi copiat spaţiile, taburile etc. exact) şi semnatura dedesubt pentru a verifica mesajul. Aveţi grijă să nu citiţi mai mult în semnatură decît mesajul în sine, pentru a evita să fiţi păcăliţi de un atac de tip man-in-the-middle. De notat ca aceasta dovedeste doar ca semnatarul primeste odata cu adresa, nu dovedesta insa trimiterea vreunei tranzactii.</translation>
     </message>
     <message>
-        <source>The Osmium address the message was signed with</source>
-        <translation>Introduceţi o adresă Osmium</translation>
+        <source>The Maximus address the message was signed with</source>
+        <translation>Introduceţi o adresă Maximus</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Osmium address</source>
-        <translation>Verificaţi mesajul pentru a vă asigura că a fost semnat cu adresa Osmium specificată</translation>
+        <source>Verify the message to ensure it was signed with the specified Maximus address</source>
+        <translation>Verificaţi mesajul pentru a vă asigura că a fost semnat cu adresa Maximus specificată</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3413,7 +3413,7 @@ https://www.transifex.com/projects/p/osmium/</translation>
     </message>
     </context>
 <context>
-    <name>osmium-core</name>
+    <name>maximus-core</name>
     <message>
         <source>Error: Listening for incoming connections failed (listen returned error %s)</source>
         <translation>Eroare: Ascultarea conexiunilor de intrare nu a reuşit (ascultarea a reurnat eroarea %s)</translation>
@@ -3919,8 +3919,8 @@ https://www.transifex.com/projects/p/osmium/</translation>
         <translation>vezi debug.log pentru detalii.</translation>
     </message>
     <message>
-        <source>Osmium Core</source>
-        <translation>Osmium Core</translation>
+        <source>Maximus Core</source>
+        <translation>Maximus Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

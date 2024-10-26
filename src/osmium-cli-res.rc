@@ -16,14 +16,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Osmium"
-            VALUE "FileDescription",    "osmium-cli (JSON-RPC client for " PACKAGE_NAME ")"
+            VALUE "CompanyName",        "Maximus"
+            VALUE "FileDescription",    "maximus-cli (JSON-RPC client for " PACKAGE_NAME ")"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "osmium-cli"
+            VALUE "InternalName",       "maximus-cli"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "osmium-cli.exe"
-            VALUE "ProductName",        "osmium-cli"
+            VALUE "OriginalFilename",   "maximus-cli.exe"
+            VALUE "ProductName",        "maximus-cli"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

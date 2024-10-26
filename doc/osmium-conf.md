@@ -1,10 +1,10 @@
-# `osmium.conf` Configuration File
+# `maximus.conf` Configuration File
 
-The configuration file is used by `osmiumd`, `osmium-qt` and `osmium-cli`.
+The configuration file is used by `maximusd`, `maximus-qt` and `maximus-cli`.
 
 All command-line options (except for `-?`, `-help`, `-version` and `-conf`) may be specified in a configuration file, and all configuration file options (except for `includeconf`) may also be specified on the command line. Command-line options override values set in the configuration file and configuration file options override values set in the GUI.
 
-Changes to the configuration file while `osmiumd` or `osmium-qt` is running only take effect after restarting.
+Changes to the configuration file while `maximusd` or `maximus-qt` is running only take effect after restarting.
 
 Users should never make any configuration changes which they do not understand. Furthermore, users should always be wary of accepting any configuration changes provided to them by another source (even if they believe that they do understand them).
 
@@ -51,16 +51,16 @@ rpcport=4000
 
 ## Configuration File Path
 
-The configuration file is not automatically created; you can create it using your favorite text editor. By default, the configuration file name is `osmium.conf` and it is located in the Osmium data directory, but both the osmium data directory and the configuration file path may be changed using the `-datadir` and `-conf` command-line options.
+The configuration file is not automatically created; you can create it using your favorite text editor. By default, the configuration file name is `maximus.conf` and it is located in the Maximus data directory, but both the maximus data directory and the configuration file path may be changed using the `-datadir` and `-conf` command-line options.
 
-The `includeconf=<file>` option in the `osmium.conf` file can be used to include additional configuration files.
+The `includeconf=<file>` option in the `maximus.conf` file can be used to include additional configuration files.
 
 ### Default configuration file locations
 
 Operating System | Data Directory | Example Path
 -- | -- | --
-Windows | `%APPDATA%\OsmiumCore\` | `C:\Users\username\AppData\Roaming\OsmiumCore\osmium.conf`
-Linux | `$HOME/.osmiumcore/` | `/home/username/.osmiumcore/osmium.conf`
-macOS | `$HOME/Library/Application Support/OsmiumCore/` | `/Users/username/Library/Application Support/OsmiumCore/osmium.conf`
+Windows | `%APPDATA%\MaximusCore\` | `C:\Users\username\AppData\Roaming\MaximusCore\maximus.conf`
+Linux | `$HOME/.maximuscore/` | `/home/username/.maximuscore/maximus.conf`
+macOS | `$HOME/Library/Application Support/MaximusCore/` | `/Users/username/Library/Application Support/MaximusCore/maximus.conf`
 
-You can find an example osmium.conf file in [share/examples/osmium.conf](../share/examples/osmium.conf).
+You can find an example maximus.conf file in [share/examples/maximus.conf](../share/examples/maximus.conf).

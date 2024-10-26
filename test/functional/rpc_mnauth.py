@@ -5,7 +5,7 @@
 
 from test_framework.messages import hash256
 from test_framework.p2p import P2PInterface
-from test_framework.test_framework import OsmiumTestFramework
+from test_framework.test_framework import MaximusTestFramework
 from test_framework.util import assert_equal, assert_raises_rpc_error, hex_str_to_bytes
 
 '''
@@ -15,9 +15,9 @@ Tests mnauth RPC command
 '''
 
 
-class FakeMNAUTHTest(OsmiumTestFramework):
+class FakeMNAUTHTest(MaximusTestFramework):
     def set_test_params(self):
-        self.set_osmium_test_params(2, 1, fast_dip3_enforcement=True)
+        self.set_maximus_test_params(2, 1, fast_dip3_enforcement=True)
 
     def run_test(self):
 

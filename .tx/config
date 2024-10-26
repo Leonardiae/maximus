@@ -1,7 +1,7 @@
 [main]
 host = https://www.transifex.com
 
-[osmium.osmium_ents]
-file_filter = src/qt/locale/osmium_<lang>.ts
-source_file = src/qt/locale/osmium_en.xlf
+[maximus.maximus_ents]
+file_filter = src/qt/locale/maximus_<lang>.ts
+source_file = src/qt/locale/maximus_en.xlf
 source_lang = en

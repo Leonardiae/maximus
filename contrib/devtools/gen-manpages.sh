@@ -10,11 +10,11 @@ BUILDDIR=${BUILDDIR:-$TOPDIR}
 BINDIR=${BINDIR:-$BUILDDIR/src}
 MANDIR=${MANDIR:-$TOPDIR/doc/man}
 
-BITCOIND=${BITCOIND:-$BINDIR/osmiumd}
-BITCOINCLI=${BITCOINCLI:-$BINDIR/osmium-cli}
-BITCOINTX=${BITCOINTX:-$BINDIR/osmium-tx}
-WALLET_TOOL=${WALLET_TOOL:-$BINDIR/osmium-wallet}
-BITCOINQT=${BITCOINQT:-$BINDIR/qt/osmium-qt}
+BITCOIND=${BITCOIND:-$BINDIR/maximusd}
+BITCOINCLI=${BITCOINCLI:-$BINDIR/maximus-cli}
+BITCOINTX=${BITCOINTX:-$BINDIR/maximus-tx}
+WALLET_TOOL=${WALLET_TOOL:-$BINDIR/maximus-wallet}
+BITCOINQT=${BITCOINQT:-$BINDIR/qt/maximus-qt}
 
 [ ! -x $BITCOIND ] && echo "$BITCOIND not found or not executable." && exit 1
 
@@ -38,8 +38,8 @@ fi
 read -r -a BTCVER <<< "$($BITCOINCLI --version | head -n1 | awk -F'[ -]' '{ print $6, $7 }')"
 
 # Create a footer file with copyright content.
-# This gets autodetected fine for osmiumd if --version-string is not set,
-# but has different outcomes for osmium-qt and osmium-cli.
+# This gets autodetected fine for maximusd if --version-string is not set,
+# but has different outcomes for maximus-qt and maximus-cli.
 echo "[COPYRIGHT]" > footer.h2m
 $BITCOIND --version | sed -n '1!p' >> footer.h2m
 

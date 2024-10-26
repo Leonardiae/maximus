@@ -160,7 +160,7 @@ bool ParseBoolV(const UniValue& v, const std::string &strName)
 
 std::string HelpExampleCli(const std::string& methodname, const std::string& args)
 {
-    return "> osmium-cli " + methodname + " " + args + "\n";
+    return "> maximus-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(const std::string& methodname, const std::string& args)

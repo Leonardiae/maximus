@@ -26,7 +26,7 @@ If you run into issues, check [Homebrew's troubleshooting page](https://docs.bre
 See [dependencies.md](dependencies.md) for a complete overview.
 
 The wallet support requires one or both of the dependencies ([*SQLite*](#sqlite) and [*Berkeley DB*](#berkeley-db)) in the sections below.
-To build Osmium Core without wallet, see [*Disable-wallet mode*](#disable-wallet-mode).
+To build Maximus Core without wallet, see [*Disable-wallet mode*](#disable-wallet-mode).
 
 #### SQLite
 
@@ -63,17 +63,17 @@ Also, the Homebrew package could be installed:
 brew install berkeley-db4
 ```
 
-## Build Osmium Core
+## Build Maximus Core
 
-1. Clone the Osmium Core source code:
+1. Clone the Maximus Core source code:
     ```shell
-    git clone https://github.com/osmium-labs/osmium
-    cd osmium
+    git clone https://github.com/maximus-labs/maximus
+    cd maximus
     ```
 
-2.  Build Osmium Core:
+2.  Build Maximus Core:
 
-    Configure and build the headless Osmium Core binaries as well as the GUI (if Qt is found).
+    Configure and build the headless Maximus Core binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
     ```shell
@@ -93,7 +93,7 @@ brew install berkeley-db4
     ```
 
 ## Disable-wallet mode
-When the intention is to run only a P2P node without a wallet, Osmium Core may be
+When the intention is to run only a P2P node without a wallet, Maximus Core may be
 compiled in disable-wallet mode with:
 ```shell
 ./configure --disable-wallet
@@ -105,30 +105,30 @@ Mining is also possible in disable-wallet mode using the `getblocktemplate` RPC 
 
 ## Running
 
-Osmium Core is now available at `./src/osmiumd`
+Maximus Core is now available at `./src/maximusd`
 
 Before running, you may create an empty configuration file:
 ```shell
-mkdir -p "/Users/${USER}/Library/Application Support/OsmiumCore"
+mkdir -p "/Users/${USER}/Library/Application Support/MaximusCore"
 
-touch "/Users/${USER}/Library/Application Support/OsmiumCore/osmium.conf"
+touch "/Users/${USER}/Library/Application Support/MaximusCore/maximus.conf"
 
-chmod 600 "/Users/${USER}/Library/Application Support/OsmiumCore/osmium.conf"
+chmod 600 "/Users/${USER}/Library/Application Support/MaximusCore/maximus.conf"
 ```
 
-The first time you run osmiumd, it will start downloading the blockchain. This process could take many hours, or even days on slower than average systems.
+The first time you run maximusd, it will start downloading the blockchain. This process could take many hours, or even days on slower than average systems.
 
 You can monitor the download process by looking at the debug.log file:
 ```shell
-tail -f $HOME/Library/Application\ Support/OsmiumCore/debug.log
+tail -f $HOME/Library/Application\ Support/MaximusCore/debug.log
 ```
 
 ## Other commands:
 
 ```shell
-./src/osmiumd -daemon      # Starts the osmium daemon.
-./src/osmium-cli --help    # Outputs a list of command-line options.
-./src/osmium-cli help      # Outputs a list of RPC commands when the daemon is running.
+./src/maximusd -daemon      # Starts the maximus daemon.
+./src/maximus-cli --help    # Outputs a list of command-line options.
+./src/maximus-cli help      # Outputs a list of RPC commands when the daemon is running.
 ```
 
 ## Notes

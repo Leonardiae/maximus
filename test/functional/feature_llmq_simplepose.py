@@ -12,14 +12,14 @@ Checks simple PoSe system based on LLMQ commitments
 
 import time
 
-from test_framework.test_framework import OsmiumTestFramework
+from test_framework.test_framework import MaximusTestFramework
 from test_framework.util import assert_equal, force_finish_mnsync, p2p_port
 
 
-class LLMQSimplePoSeTest(OsmiumTestFramework):
+class LLMQSimplePoSeTest(MaximusTestFramework):
     def set_test_params(self):
-        self.set_osmium_test_params(6, 5, fast_dip3_enforcement=True)
-        self.set_osmium_llmq_test_params(5, 3)
+        self.set_maximus_test_params(6, 5, fast_dip3_enforcement=True)
+        self.set_maximus_llmq_test_params(5, 3)
 
     def run_test(self):
 

@@ -13,7 +13,7 @@ class CWallet;
 
 namespace interfaces {
 namespace CoinJoin {
-//! Interface for the wallet constrained src/coinjoin part of a osmium node (osmiumd process).
+//! Interface for the wallet constrained src/coinjoin part of a maximus node (maximusd process).
 class Client
 {
 public:

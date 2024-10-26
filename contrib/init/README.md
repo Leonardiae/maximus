@@ -1,11 +1,11 @@
 Sample configuration files for:
 ```
-systemd: osmiumd.service
-Upstart: osmiumd.conf
-OpenRC:  osmiumd.openrc
-         osmiumd.openrcconf
-CentOS:  osmiumd.init
-macOS:   org.osmium.osmiumd.plist
+systemd: maximusd.service
+Upstart: maximusd.conf
+OpenRC:  maximusd.openrc
+         maximusd.openrcconf
+CentOS:  maximusd.init
+macOS:   org.maximus.maximusd.plist
 ```
 have been made available to assist packagers in creating node packages here.
 

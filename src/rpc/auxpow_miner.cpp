@@ -47,12 +47,12 @@ void auxMiningCheck(const JSONRPCRequest& request)
   if (node.connman->GetNodeCount(CConnman::CONNECTIONS_ALL) == 0
         && !Params().MineBlocksOnDemand())
     throw JSONRPCError (RPC_CLIENT_NOT_CONNECTED,
-                        "Osmium is not connected!");
+                        "Maximus is not connected!");
 
   if (chainman.ActiveChainstate().IsInitialBlockDownload()
         && !Params().MineBlocksOnDemand())
     throw JSONRPCError (RPC_CLIENT_IN_INITIAL_DOWNLOAD,
-                        "Osmium is downloading blocks...");
+                        "Maximus is downloading blocks...");
 
   /* This should never fail, since the chain is already
      past the point of merge-mining start.  Check nevertheless.  */

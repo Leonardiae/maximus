@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2021 Daniel Kraft
-// Copyright (c) 2024 The Osmium developers
+// Copyright (c) 2024 The Maximus developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file license.txt or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef OSMIUM_AUXPOW_H
-#define OSMIUM_AUXPOW_H
+#ifndef MAXIMUS_AUXPOW_H
+#define MAXIMUS_AUXPOW_H
 
 #include <consensus/params.h>
 #include <primitives/pureheader.h>
@@ -41,7 +41,7 @@ static const unsigned char pchMergedMiningHeader[] = {
 
 /**
  * Data for the merge-mining auxpow.  This uses a merkle tx (the parent block's
- * coinbase tx) and a second merkle branch to link the actual osmium block
+ * coinbase tx) and a second merkle branch to link the actual maximus block
  * header to the parent block header, which is mined to satisfy the PoW.
  */
 class CAuxPow
@@ -170,4 +170,4 @@ public:
     static CPureBlockHeader& initAuxPow (CBlockHeader& header);
 };
 
-#endif // OSMIUM_AUXPOW_H
+#endif // MAXIMUS_AUXPOW_H

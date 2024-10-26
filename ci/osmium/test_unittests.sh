@@ -9,7 +9,7 @@ export LC_ALL=C.UTF-8
 
 set -e
 
-source ./ci/osmium/matrix.sh
+source ./ci/maximus/matrix.sh
 
 if [ "$RUN_UNIT_TESTS" != "true" ] && [ "$RUN_UNIT_TESTS_SEQUENTIAL" != "true" ]; then
   echo "Skipping unit tests"
@@ -22,14 +22,14 @@ export LD_LIBRARY_PATH=$DEPENDS_DIR/$HOST/lib
 export WINEDEBUG=fixme-all
 export BOOST_TEST_LOG_LEVEL=test_suite
 
-cd build-ci/osmiumcore-$BUILD_TARGET
+cd build-ci/maximuscore-$BUILD_TARGET
 
 if [ "$DIRECT_WINE_EXEC_TESTS" = "true" ]; then
   # Inside Docker, binfmt isn't working so we can't trust in make invoking windows binaries correctly
-  wine ./src/test/test_osmium.exe
+  wine ./src/test/test_maximus.exe
 else
   if [ "$RUN_UNIT_TESTS_SEQUENTIAL" = "true" ]; then
-    ${TEST_RUNNER_ENV} ./src/test/test_osmium --catch_system_errors=no -l test_suite
+    ${TEST_RUNNER_ENV} ./src/test/test_maximus --catch_system_errors=no -l test_suite
   else
       ${TEST_RUNNER_ENV} make $MAKEJOBS check VERBOSE=1
   fi

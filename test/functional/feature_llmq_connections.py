@@ -12,13 +12,13 @@ Checks intra quorum connections
 
 import time
 
-from test_framework.test_framework import OsmiumTestFramework
+from test_framework.test_framework import MaximusTestFramework
 from test_framework.util import assert_greater_than_or_equal
 
-class LLMQConnections(OsmiumTestFramework):
+class LLMQConnections(MaximusTestFramework):
     def set_test_params(self):
-        self.set_osmium_test_params(15, 14, fast_dip3_enforcement=True)
-        self.set_osmium_llmq_test_params(5, 3)
+        self.set_maximus_test_params(15, 14, fast_dip3_enforcement=True)
+        self.set_maximus_llmq_test_params(5, 3)
         # Probes should age after this many seconds.
         # NOTE: mine_quorum() can bump mocktime quite often internally so make sure this number is high enough.
         self.MAX_AGE = int(120 * self.options.timeout_factor)

@@ -157,7 +157,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../osmium.qrc"/>
+  <include location="../maximus.qrc"/>
  </resources>
  <connections/>
 </ui>

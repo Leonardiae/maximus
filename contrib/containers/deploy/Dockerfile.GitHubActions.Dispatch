@@ -16,7 +16,7 @@ RUN apt-get update && \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /home/osmium
+WORKDIR /home/maximus
 
 COPY . .
 
@@ -38,27 +38,27 @@ RUN make -j`nproc | awk '{x=$1/2; print x}'` && make install
 
 RUN mkdir built-target && \
   case "$TARGETPLATFORM" in \
-  "linux/arm64") cp depends/arm-linux-gnueabihf/bin/osmium* /home/osmium/built-target ;; \
-  "linux/amd64") cp depends/x86_64-pc-linux-gnu/bin/osmium* /home/osmium/built-target ;; \
+  "linux/arm64") cp depends/arm-linux-gnueabihf/bin/maximus* /home/maximus/built-target ;; \
+  "linux/amd64") cp depends/x86_64-pc-linux-gnu/bin/maximus* /home/maximus/built-target ;; \
 esac
 
 FROM ubuntu:focal
-LABEL maintainer="Osmium Developers <dev@osmium.org>"
-LABEL description="Dockerised OsmiumCore"
+LABEL maintainer="Maximus Developers <dev@maximus.org>"
+LABEL description="Dockerised MaximusCore"
 
 ARG USER_ID
 ARG GROUP_ID
 ARG TAG
 
-ENV HOME /home/osmium
+ENV HOME /home/maximus
 
 # add user with specified (or default) user/group ids
 ENV USER_ID ${USER_ID:-1000}
 ENV GROUP_ID ${GROUP_ID:-1000}
-RUN groupadd -g ${GROUP_ID} osmium && \
-    useradd -u ${USER_ID} -g osmium -s /bin/bash -m -d /home/osmium osmium  && \
-    mkdir /home/osmium/.osmiumcore && \
-    chown ${USER_ID}:${GROUP_ID} -R /home/osmium
+RUN groupadd -g ${GROUP_ID} maximus && \
+    useradd -u ${USER_ID} -g maximus -s /bin/bash -m -d /home/maximus maximus  && \
+    mkdir /home/maximus/.maximuscore && \
+    chown ${USER_ID}:${GROUP_ID} -R /home/maximus
 
 RUN apt-get update && \
     apt-get -y install --no-install-recommends \
@@ -66,15 +66,15 @@ RUN apt-get update && \
     ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
-COPY --from=builder /home/osmium/built-target/osmium* /usr/local/bin
+COPY --from=builder /home/maximus/built-target/maximus* /usr/local/bin
 
-USER osmium
+USER maximus
 
-VOLUME ["/home/osmium"]
+VOLUME ["/home/maximus"]
 
 COPY docker/docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 EXPOSE 9968 9969 19968 19969
 
-WORKDIR /home/osmium
+WORKDIR /home/maximus

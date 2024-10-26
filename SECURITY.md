@@ -8,4 +8,4 @@
 
 ## Reporting a Vulnerability
 
-To report security issues send an email to security@osmium.space (not for support).
+To report security issues send an email to security@maximus.space (not for support).

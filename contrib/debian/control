@@ -1,4 +1,4 @@
-Source: osmium
+Source: maximus
 Section: utils
 Priority: optional
 Maintainer: Holger Schinzel <holger@dash.org>
@@ -21,45 +21,45 @@ Build-Depends: debhelper,
  python,
  libzmq3-dev
 Standards-Version: 3.9.2
-Homepage: https://www.osmium.space/
-Vcs-Git: git://github.com/osmium-labs/osmium.git
-Vcs-Browser: https://github.com/osmium-labs/osmium
+Homepage: https://www.maximus.space/
+Vcs-Git: git://github.com/maximus-labs/maximus.git
+Vcs-Browser: https://github.com/maximus-labs/maximus
 
-Package: osmiumd
+Package: maximusd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- Osmium is an experimental new digital currency that enables instant, private
- payments to anyone, anywhere in the world. Osmium uses peer-to-peer
+ Maximus is an experimental new digital currency that enables instant, private
+ payments to anyone, anywhere in the world. Maximus uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Osmium Core
+ and issuing money are carried out collectively by the network. Maximus Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides the daemon, osmiumd, and the CLI tool
- osmium-cli to interact with the daemon.
+ This package provides the daemon, maximusd, and the CLI tool
+ maximus-cli to interact with the daemon.
 
-Package: osmium-qt
+Package: maximus-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- Osmium is an experimental new digital currency that enables instant, private
- payments to anyone, anywhere in the world. Osmium uses peer-to-peer
+ Maximus is an experimental new digital currency that enables instant, private
+ payments to anyone, anywhere in the world. Maximus uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Osmium Core
+ and issuing money are carried out collectively by the network. Maximus Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides Osmium-Qt, a GUI for Osmium based on Qt.
+ This package provides Maximus-Qt, a GUI for Maximus based on Qt.
 
-Package: osmium-tx
+Package: maximus-tx
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer digital currency - standalone transaction tool
- Osmium is an experimental new digital currency that enables instant, private
- payments to anyone, anywhere in the world. Osmium uses peer-to-peer
+ Maximus is an experimental new digital currency that enables instant, private
+ payments to anyone, anywhere in the world. Maximus uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Osmium Core
+ and issuing money are carried out collectively by the network. Maximus Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides osmium-tx, a command-line transaction creation
- tool which can be used without a osmium daemon.  Some means of
+ This package provides maximus-tx, a command-line transaction creation
+ tool which can be used without a maximus daemon.  Some means of
  exchanging minimal transaction data with peers is still required.

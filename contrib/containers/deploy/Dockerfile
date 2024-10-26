@@ -1,28 +1,28 @@
 FROM phusion/baseimage:focal-1.0.0
-LABEL maintainer="Osmium Developers <dev@osmium.org>"
-LABEL description="Dockerised OsmiumCore, built from Travis"
+LABEL maintainer="Maximus Developers <dev@maximus.org>"
+LABEL description="Dockerised MaximusCore, built from Travis"
 
 ARG USER_ID
 ARG GROUP_ID
 
-ENV HOME /home/osmium
+ENV HOME /home/maximus
 
 # add user with specified (or default) user/group ids
 ENV USER_ID ${USER_ID:-1000}
 ENV GROUP_ID ${GROUP_ID:-1000}
-RUN groupadd -g ${GROUP_ID} osmium && \
-    useradd -u ${USER_ID} -g osmium -s /bin/bash -m -d /home/osmium osmium && \
-    mkdir /home/osmium/.osmiumcore && \
-    chown ${USER_ID}:${GROUP_ID} -R /home/osmium
+RUN groupadd -g ${GROUP_ID} maximus && \
+    useradd -u ${USER_ID} -g maximus -s /bin/bash -m -d /home/maximus maximus && \
+    mkdir /home/maximus/.maximuscore && \
+    chown ${USER_ID}:${GROUP_ID} -R /home/maximus
 
 COPY bin/* /usr/local/bin/
 
 RUN chmod a+x /usr/local/bin/*
 
-USER osmium
+USER maximus
 
-VOLUME ["/home/osmium"]
+VOLUME ["/home/maximus"]
 
 EXPOSE 9968 9969 19968 19969
 
-WORKDIR /home/osmium
+WORKDIR /home/maximus

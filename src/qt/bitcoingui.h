@@ -336,7 +336,7 @@ public Q_SLOTS:
     void gotoSignMessageTab(QString addr = "");
     /** Show Sign/Verify Message dialog and switch to verify message tab */
     void gotoVerifyMessageTab(QString addr = "");
-    /** Load Partially Signed Osmium Transaction from file or clipboard */
+    /** Load Partially Signed Maximus Transaction from file or clipboard */
     void gotoLoadPSBT(bool from_clipboard = false);
 
     /** Show open dialog */
@@ -359,7 +359,7 @@ public Q_SLOTS:
     void showPeers();
     void showRepair();
 
-    /** Open external (default) editor with osmium.conf */
+    /** Open external (default) editor with maximus.conf */
     void showConfEditor();
     /** Show folder with wallet backups in default file browser */
     void showBackups();

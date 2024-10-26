@@ -1,6 +1,6 @@
 ### TestGen ###
 
-Utilities to generate test vectors for the data-driven Osmium tests.
+Utilities to generate test vectors for the data-driven Maximus tests.
 
 Usage:
 
