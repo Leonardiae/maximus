@@ -52,19 +52,19 @@ const CBaseChainParams& BaseParams()
 }
 
 /**
- * Port numbers for incoming Tor connections (9966, 19966, 19766, 19866) have
+ * Port numbers for incoming Tor connections (9936, 19936, 19736, 19836) have
  * been chosen arbitrarily to keep ranges of used ports tight.
  */
 std::unique_ptr<CBaseChainParams> CreateBaseChainParams(const std::string& chain)
 {
     if (chain == CBaseChainParams::MAIN)
-        return std::make_unique<CBaseChainParams>("", 9968, 9966);
+        return std::make_unique<CBaseChainParams>("", 9938, 9936);
     else if (chain == CBaseChainParams::TESTNET)
-        return std::make_unique<CBaseChainParams>("testnet3", 19968, 19966);
+        return std::make_unique<CBaseChainParams>("testnet3", 19938, 19936);
     else if (chain == CBaseChainParams::DEVNET)
-        return std::make_unique<CBaseChainParams>(gArgs.GetDevNetName(), 19768, 19766);
+        return std::make_unique<CBaseChainParams>(gArgs.GetDevNetName(), 19738, 19736);
     else if (chain == CBaseChainParams::REGTEST)
-        return std::make_unique<CBaseChainParams>("regtest", 19868, 19866);
+        return std::make_unique<CBaseChainParams>("regtest", 19838, 19836);
     else
         throw std::runtime_error(strprintf("%s: Unknown chain %s.", __func__, chain));
 }

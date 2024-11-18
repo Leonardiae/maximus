@@ -23,6 +23,6 @@ USER maximus
 
 VOLUME ["/home/maximus"]
 
-EXPOSE 9968 9969 19968 19969
+EXPOSE 9938 9939 19938 19939
 
 WORKDIR /home/maximus
