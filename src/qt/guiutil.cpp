@@ -107,12 +107,12 @@ static const FontFamily defaultFontFamily = FontFamily::SystemDefault;
 static const int defaultFontSize = 12;
 static const double fontScaleSteps = 0.01;
 #ifdef Q_OS_MAC
-static const QFont::Weight defaultFontWeightNormal = QFont::ExtraLight;
-static const QFont::Weight defaultFontWeightBold = QFont::Medium;
+static const QFont::Weight defaultFontWeightNormal = QFont::Light;
+static const QFont::Weight defaultFontWeightBold = QFont::Bold;
 static const int defaultFontScale = 0;
 #else
 static const QFont::Weight defaultFontWeightNormal = QFont::Light;
-static const QFont::Weight defaultFontWeightBold = QFont::Medium;
+static const QFont::Weight defaultFontWeightBold = QFont::Bold;
 static const int defaultFontScale = 0;
 #endif
 
@@ -995,8 +995,8 @@ FontFamily fontFamilyFromString(const QString& strFamily)
     if (strFamily == "SystemDefault") {
         return FontFamily::SystemDefault;
     }
-    if (strFamily == "Montserrat") {
-        return FontFamily::Montserrat;
+    if (strFamily == "Merriweather") {
+        return FontFamily::Merriweather;
     }
     throw std::invalid_argument(strprintf("Invalid font-family: %s", strFamily.toStdString()));
 }
@@ -1006,8 +1006,8 @@ QString fontFamilyToString(FontFamily family)
     switch (family) {
     case FontFamily::SystemDefault:
         return "SystemDefault";
-    case FontFamily::Montserrat:
-        return "Montserrat";
+    case FontFamily::Merriweather:
+        return "Merriweather";
     default:
         assert(false);
     }
@@ -1033,15 +1033,8 @@ FontFamily getFontFamily()
 bool weightFromArg(int nArg, QFont::Weight& weight)
 {
     const std::map<int, QFont::Weight> mapWeight{
-        {0, QFont::Thin},
-        {1, QFont::ExtraLight},
-        {2, QFont::Light},
-        {3, QFont::Normal},
-        {4, QFont::Medium},
-        {5, QFont::DemiBold},
-        {6, QFont::Bold},
-        {7, QFont::ExtraBold},
-        {8, QFont::Black}
+        {0, QFont::Light},
+        {1, QFont::Bold},
     };
     auto it = mapWeight.find(nArg);
     if (it == mapWeight.end()) {
@@ -1054,15 +1047,8 @@ bool weightFromArg(int nArg, QFont::Weight& weight)
 int weightToArg(const QFont::Weight weight)
 {
     const std::map<QFont::Weight, int> mapWeight{
-        {QFont::Thin, 0},
-        {QFont::ExtraLight, 1},
-        {QFont::Light, 2},
-        {QFont::Normal, 3},
-        {QFont::Medium, 4},
-        {QFont::DemiBold, 5},
-        {QFont::Bold, 6},
-        {QFont::ExtraBold, 7},
-        {QFont::Black, 8}
+        {QFont::Light, 0},
+        {QFont::Bold, 1},
     };
     assert(mapWeight.count(weight));
     return mapWeight.find(weight)->second;
@@ -1143,20 +1129,20 @@ bool loadFonts()
     // Before any font changes store the applications default font to use it as SystemDefault.
     osDefaultFont = std::make_unique<QFont>(QApplication::font());
 
-    QString family = fontFamilyToString(FontFamily::Montserrat);
+    QString family = fontFamilyToString(FontFamily::Merriweather);
     QString italic = "Italic";
 
     std::map<QString, bool> mapStyles{
-        {"Thin", true},
-        {"ExtraLight", true},
+        {"Thin", false},
+        {"ExtraLight", false},
         {"Light", true},
         {"Italic", false},
         {"Regular", false},
-        {"Medium", true},
-        {"SemiBold", true},
+        {"Medium", false},
+        {"SemiBold", false},
         {"Bold", true},
-        {"ExtraBold", true},
-        {"Black", true},
+        {"ExtraBold", false},
+        {"Black", false},
     };
 
     QFontDatabase database;
@@ -1209,9 +1195,7 @@ bool loadFonts()
             QFont font = getFont(family, weight, false, defaultFontSize);
             return TextWidth(QFontMetrics(font), ("Check the width of this text to see if the weight change has an impact!"));
         };
-        std::vector<QFont::Weight> vecWeights{QFont::Thin, QFont::ExtraLight, QFont::Light,
-                                              QFont::Normal, QFont::Medium, QFont::DemiBold,
-                                              QFont::Bold, QFont::ExtraBold, QFont::Black};
+        std::vector<QFont::Weight> vecWeights{QFont::Light, QFont::Bold};
         std::vector<QFont::Weight> vecSupported;
         QFont::Weight prevWeight = vecWeights.front();
         for (auto weight = vecWeights.begin() + 1; weight != vecWeights.end(); ++weight) {
@@ -1230,7 +1214,7 @@ bool loadFonts()
     };
 
     mapSupportedWeights.insert(std::make_pair(FontFamily::SystemDefault, supportedWeights(FontFamily::SystemDefault)));
-    mapSupportedWeights.insert(std::make_pair(FontFamily::Montserrat, supportedWeights(FontFamily::Montserrat)));
+    mapSupportedWeights.insert(std::make_pair(FontFamily::Merriweather, supportedWeights(FontFamily::Merriweather)));
 
     auto getBestMatch = [&](FontFamily fontFamily, QFont::Weight targetWeight) {
         auto& vecSupported = mapSupportedWeights[fontFamily];
@@ -1262,7 +1246,7 @@ bool loadFonts()
     };
 
     addBestDefaults(FontFamily::SystemDefault);
-    addBestDefaults(FontFamily::Montserrat);
+    addBestDefaults(FontFamily::Merriweather);
 
     // Load supported defaults. May become overwritten later.
     mapWeights = mapDefaultWeights;
@@ -1283,8 +1267,8 @@ void setApplicationFont()
 
     std::unique_ptr<QFont> font;
 
-    if (fontFamily == FontFamily::Montserrat) {
-        QString family = fontFamilyToString(FontFamily::Montserrat);
+    if (fontFamily == FontFamily::Merriweather) {
+        QString family = fontFamilyToString(FontFamily::Merriweather);
 #ifdef Q_OS_MAC
         if (getFontWeightNormal() != getFontWeightNormalDefault()) {
             font = std::make_unique<QFont>(getFontNormal());
@@ -1433,17 +1417,12 @@ QFont getFont(FontFamily family, QFont::Weight qWeight, bool fItalic, int nPoint
         return font;
     }
 
-    if (family == FontFamily::Montserrat) {
-        static std::map<QFont::Weight, QString> mapMontserratMapping{
-            {QFont::Thin, "Thin"},
-            {QFont::ExtraLight, "ExtraLight"},
+    if (family == FontFamily::Merriweather) {
+        static std::map<QFont::Weight, QString> mapMerriweatherMapping{
             {QFont::Light, "Light"},
-            {QFont::Medium, "Medium"},
-            {QFont::DemiBold, "SemiBold"},
-            {QFont::ExtraBold, "ExtraBold"},
-            {QFont::Black, "Black"},
+            {QFont::Black, "Bold"},
 #ifdef Q_OS_MAC
-            {QFont::Normal, "Regular"},
+            {QFont::Normal, "Light"},
             {QFont::Bold, "Bold"},
 #else
             {QFont::Normal, ""},
@@ -1451,11 +1430,11 @@ QFont getFont(FontFamily family, QFont::Weight qWeight, bool fItalic, int nPoint
 #endif
         };
 
-        assert(mapMontserratMapping.count(qWeight));
+        assert(mapMerriweatherMapping.count(qWeight));
 
 #ifdef Q_OS_MAC
 
-        QString styleName = mapMontserratMapping[qWeight];
+        QString styleName = mapMerriweatherMapping[qWeight];
 
         if (fItalic) {
             if (styleName == "Regular") {
@@ -1465,10 +1444,10 @@ QFont getFont(FontFamily family, QFont::Weight qWeight, bool fItalic, int nPoint
             }
         }
 
-        font.setFamily(fontFamilyToString(FontFamily::Montserrat));
+        font.setFamily(fontFamilyToString(FontFamily::Merriweather));
         font.setStyleName(styleName);
 #else
-        font.setFamily(fontFamilyToString(FontFamily::Montserrat) + " " + mapMontserratMapping[qWeight]);
+        font.setFamily(fontFamilyToString(FontFamily::Merriweather) + " " + mapMerriweatherMapping[qWeight]);
         font.setWeight(qWeight);
         font.setStyle(fItalic ? QFont::StyleItalic : QFont::StyleNormal);
 #endif
