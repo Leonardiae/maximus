@@ -86,7 +86,7 @@ void TrafficGraphWidget::paintEvent(QPaintEvent *)
     if(fMax <= 0.0f) return;
 
     QColor green = GUIUtil::getThemedQColor(GUIUtil::ThemedColor::GREEN);
-    QColor red = GUIUtil::getThemedQColor(GUIUtil::ThemedColor::RED);
+    QColor red = GUIUtil::getThemedQColor(GUIUtil::ThemedColor::PRIMARY);
     QColor axisCol(GUIUtil::getThemedQColor(GUIUtil::ThemedColor::DEFAULT));
     QColor axisCol2;
     int h = height() - YMARGIN * 2;
