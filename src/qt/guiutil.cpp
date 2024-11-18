@@ -153,44 +153,41 @@ static const std::map<ThemedColor, QColor> themedColors = {
 };
 
 static const std::map<ThemedColor, QColor> themedDarkColors = {
-    { ThemedColor::DEFAULT, QColor(199, 199, 199) },
-    { ThemedColor::PRIMARY, QColor(171, 132, 187) },
+    { ThemedColor::DEFAULT, QColor(119, 131, 143) }, 
+    { ThemedColor::PRIMARY, QColor(255, 204, 97) },
     { ThemedColor::UNCONFIRMED, QColor(160, 165, 168) },
     { ThemedColor::BLUE, QColor(106, 172, 251) },
-    { ThemedColor::ORANGE, QColor(231, 193, 59) },
-    { ThemedColor::RED, QColor(220, 25, 25) },
-    { ThemedColor::GREEN, QColor(167, 197, 103) },
-    { ThemedColor::BAREADDRESS, QColor(181, 186, 189) },
-    { ThemedColor::TX_STATUS_OPENUNTILDATE, QColor(64, 64, 255) },
-    { ThemedColor::BACKGROUND_WIDGET, QColor(30, 30, 30) },
-    { ThemedColor::BORDER_WIDGET, QColor(30, 30, 30) },
-    { ThemedColor::BACKGROUND_NETSTATS, QColor(17, 19, 20) },
-    { ThemedColor::BORDER_NETSTATS, QColor(17, 19, 20) },
-    { ThemedColor::QR_PIXEL, QColor(171, 132, 187) },
+    { ThemedColor::ORANGE, QColor(255, 204, 97) },
+    { ThemedColor::RED, QColor(240, 0, 0) },
+    { ThemedColor::GREEN, QColor(111, 199, 186) },
+    { ThemedColor::BAREADDRESS, QColor(110, 120, 132) },
+    { ThemedColor::TX_STATUS_OPENUNTILDATE, QColor(255, 204, 97) },
+    { ThemedColor::BACKGROUND_WIDGET, QColor(46, 41, 53) },
+    { ThemedColor::BORDER_WIDGET, QColor(46, 41, 53) },
+    { ThemedColor::BACKGROUND_NETSTATS, QColor(46, 41, 53) },
+    { ThemedColor::BORDER_NETSTATS, QColor(46, 41, 53) },
+    { ThemedColor::QR_PIXEL, QColor(255, 204, 97) },
     { ThemedColor::ICON_ALTERNATIVE_COLOR, QColor(74, 74, 75) },
 };
 
 static const std::map<ThemedStyle, QString> themedStyles = {
     { ThemedStyle::TS_INVALID, "background:#a84832;" },
-    { ThemedStyle::TS_ERROR, "color:#a84832;" },
-    { ThemedStyle::TS_WARNING, "color:#999900;" },
-    { ThemedStyle::TS_SUCCESS, "color:#5e8c41;" },
-    { ThemedStyle::TS_COMMAND, "color:#008de4;" },
-    { ThemedStyle::TS_PRIMARY, "color:#333;" },
-    { ThemedStyle::TS_SECONDARY, "color:#444;" },
+    { ThemedStyle::TS_ERROR, "color:#e35052;" },
+    { ThemedStyle::TS_WARNING, "color:#fcb92d;" },
+    { ThemedStyle::TS_SUCCESS, "color:#6fc7ba;" },
+    { ThemedStyle::TS_COMMAND, "color:#2f8b7e;" },
+    { ThemedStyle::TS_PRIMARY, "color:#221e27;" },
+    { ThemedStyle::TS_SECONDARY, "color:#83909C;" },
 };
 
 static const std::map<ThemedStyle, QString> themedDarkStyles = {
     { ThemedStyle::TS_INVALID, "background:#a84832;" },
-    // { ThemedStyle::TS_ERROR, "color:#a84832;" },
-    { ThemedStyle::TS_ERROR, "color:#dc1919;" },
-    { ThemedStyle::TS_WARNING, "color:#999900;" },
-    { ThemedStyle::TS_SUCCESS, "color:#5e8c41;" },
-    { ThemedStyle::TS_COMMAND, "color:#ab84bb;" },
-    // { ThemedStyle::TS_PRIMARY, "color:#c7c7c7;" },
-    { ThemedStyle::TS_PRIMARY, "color:#fff;" },
-    // { ThemedStyle::TS_SECONDARY, "color:#aaa;" },
-    { ThemedStyle::TS_SECONDARY, "color:#B5BABD;" },
+    { ThemedStyle::TS_ERROR, "color:#e35052;" },
+    { ThemedStyle::TS_WARNING, "color:#fcb92d;" },
+    { ThemedStyle::TS_SUCCESS, "color:#2f8b7e;" },
+    { ThemedStyle::TS_COMMAND, "color:#ffcc61;" },
+    { ThemedStyle::TS_PRIMARY, "color:#ffffff;" },
+    { ThemedStyle::TS_SECONDARY, "color:#6E7884;" },
 };
 
 QColor getThemedQColor(ThemedColor color)

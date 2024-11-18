@@ -30,13 +30,9 @@ in the <theme.css> file.
 /* do not modify! section updated by update-css-files.py
 <colors>
 
-# Used colors in general.css for commit bf3f4f7f8
+# Used colors in general.css for commit 52c36c6cc
 
 #00000000
-#5e8c41
-#AB84BB
-#DC1919
-#ffffff
 
 </colors>
 */
@@ -49,8 +45,8 @@ WalletFrame,
 QDialog {
     border: 0px;
     margin: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 25px;
+    padding-bottom: 30px;
 }
 
 .QFrame {
@@ -78,8 +74,8 @@ QPlainTextEdit,
 QLineEdit {
     border: 1px solid red;
     border-color: red;
-    border-radius: 8px;
-    padding: 0px 8px 0px 8px;
+    border-radius: 17px;
+    padding: 0px 15px 0px 15px;
 }
 
 QAbstractSpinBox,
@@ -94,7 +90,7 @@ QAbstractSpinBox:hover:!focus,
 QComboBox:hover:!focus,
 QPlainTextEdit:hover:!focus,
 QLineEdit:hover:!focus {
-    border: 2px solid red;
+    border: 1px solid red;
 }
 
 QAbstractSpinBox:hover:!focus,
@@ -103,16 +99,16 @@ QLineEdit:hover:!focus {
     /* Use the negative padding to counteract the border
     QComboBox is excluded here since this would mess
     with its dropdown menu */
-    padding: -1px 7px -1px 7px;
+    padding: 0px 15px 0px 15px;
 }
 
 QAbstractSpinBox:focus,
 QComboBox:focus,
 QPlainTextEdit:focus,
 QLineEdit:focus {
-    border: 2px solid red;
+    border: 1px solid red;
     /* Use the negative padding to counteract the border */
-    padding: -1px 7px -1px 7px;
+    padding: 0px 15px 0px 15px;
 }
 
 QAbstractSpinBox:disabled,
@@ -132,19 +128,20 @@ QAbstractSpinBox::up-button {
     background-color: #00000000;
     width: 20px;
     border: 0px;
-    padding: 2px 1px 0px 5px;
+    padding: 2px 8px 0px 5px;
 }
 
 QAbstractSpinBox::down-button {
     background-color: #00000000;
     width: 20px;
     border: 0px;
-    padding: 0px 1px 2px 5px;
+    padding: 0px 8px 2px 5px;
 }
 
 QAbstractSpinBox::up-arrow {
     width: 20px;
     height: 20px;
+    padding: 0px 8px 2px 5px;
 }
 QAbstractSpinBox::up-arrow:hover {
     width: 20px;
@@ -162,6 +159,7 @@ QAbstractSpinBox::up-arrow:disabled {
 QAbstractSpinBox::down-arrow {
     width: 20px;
     height: 20px;
+    padding: 0px 8px 2px 5px;
 }
 QAbstractSpinBox::down-arrow:hover {
     width: 20px;
@@ -328,7 +326,9 @@ QComboBox::drop-down {
 }
 
 QComboBox QListView {
-    padding: 3px;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 8px 5px 8px 5px;
 }
 
 QComboBox QAbstractItemView::item {
@@ -355,6 +355,7 @@ QComboBox::indicator {
 QComboBox::down-arrow {
     width: 20px;
     height: 20px;
+    padding: 0 15px 0 0;
 }
 QComboBox::down-arrow:hover {
     width: 20px;
@@ -385,13 +386,12 @@ QGroupBox
 QGroupBox {
     background-color:red;
     color: red;
-    padding-top: 20px;
+    padding-top: 23px;
+    margin-top: 10px;
 }
 
 QGroupBox:title {
     background-color: #00000000;
-    margin-top: 5px;
-    margin-left: 7px;
 }
 
 /******************************************************
@@ -404,16 +404,17 @@ QHeaderView { /* Table Header */
 
 QHeaderView::section { /* Table Header Sections */
     qproperty-alignment: center;
-    min-height: 25px;
+    min-height: 20px;
     outline: 0;
-    border: 0px solid;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-style: solid;
     padding-left: 5px;
     padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 QHeaderView::section:last {
-    border-right: 0px;
 }
 
 QHeaderView::down-arrow {
@@ -450,16 +451,22 @@ QMenu
 QMenu {
     border: 1px solid red;
     border-radius: 5px;
+    padding: 4px 0 4px 0;
 }
 
 QMenu::item {
-    padding: 2px 6px 2px 6px;
+    color: red;
+    margin: 0 5px 0 5px;
+    padding: 4px 10px 4px 10px;
+    border-radius: 14px;
+
 }
 
 QMenu::item:selected {
 }
 
 QMenu::separator {
+    margin: 5px 0 5px 0;
     height: 1px;
     background-color: red;
 }
@@ -469,9 +476,11 @@ QMenuBar
 ******************************************************/
 
 QMenuBar {
+    padding: 9px 0px 9px 0px;
 }
 
 QMenuBar::item {
+    padding: 3px 12px 3px 12px;
 }
 
 QMenuBar::item:selected {
@@ -486,13 +495,13 @@ QProgressBar {
     color: #00000000;
     border: 0px solid red;
     border-radius: 4px;
-    min-height: 10px;
-    max-height: 10px;
+    min-height: 8px;
+    max-height: 8px;
 }
 
 QProgressBar::chunk {
     background-color: red;
-    border-radius: 3px;
+    border-radius: 4px;
 }
 
 /******************************************************
@@ -509,12 +518,12 @@ QPushButton - General blue buttons
 QPushButton {
     background-color: red;
     border: 0;
-    border-radius: 8px;
+    border-radius: 19px;
     color: red;
     max-height: 26px;
     min-height: 26px;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-top: 4px;
     padding-bottom: 4px;
 }
@@ -792,29 +801,29 @@ QSlider
 ******************************************************/
 
 QSlider {
-    min-height: 30px;
+    min-height: 20px;
 }
 
 QSlider::groove:horizontal {
     background: #00000000;
-    height: 12px;
-    border-radius: 4px;
+    height: 3px;
+    border-radius: 1px;
 }
 
 QSlider::add-page:horizontal,
 QSlider::sub-page:horizontal {
-    height: 12px;
-    border-radius: 4px;
+    height: 3px;
+    border-radius: 1px;
 }
 
 QSlider::handle:horizontal {
 margin-left: 5px;
 margin-right: 5px;
 background-color: red;
-width: 23px;
+width: 18px;
 margin-top: -5px;
 margin-bottom: -5px;
-border-radius: 11px;
+border-radius: 6px;
 }
 
 /******************************************************
@@ -824,7 +833,7 @@ QStatusBar
 QStatusBar {
     padding-left: 10px;
     padding-right: 10px;
-    min-height: 30px;
+    min-height: 40px;
 }
 
 QStatusBar QLabel {
@@ -832,8 +841,8 @@ QStatusBar QLabel {
 }
 
 QStatusBar #lblStatusBarProgress {
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /******************************************************
@@ -847,10 +856,13 @@ QTableView
 }
 
 QTableView::item { /* Table Item */
-    border-bottom: 1px solid;
+    border-style: solid;
+    border-bottom-width: 1px;
+    border-color: red;
 }
 
 QTableView::item:selected { /* Table Item Selected */
+  border-color: red;
 }
 
 /******************************************************
@@ -883,7 +895,7 @@ QToolBar / QToolButton
 QToolBar {
     background-color: red;
     border: none;
-    border-bottom: 2px solid #AB84BB;
+    border-bottom: 2px solid;
     width: 100%;
     padding: 0;
     margin: 0;
@@ -895,7 +907,7 @@ QToolBar {
 QToolBar > QToolButton {
     background-color: #00000000;
     border: none;
-    border-bottom: 2px solid #AB84BB;
+    border-bottom: 1px solid;
     min-height: 70px;
     max-height: 70px;
     width: 100%;
@@ -905,6 +917,13 @@ QToolBar > QToolButton {
 
 QToolBar > QToolButton:hover:!checked {
     background-color: red;
+    border-bottom: 1px solid;
+    color: red;
+}
+
+QToolBar > QToolButton:checked {
+    background-color: red;
+    border-bottom: 1px solid;
     color: red;
 }
 
@@ -918,9 +937,8 @@ QToolTip
 
 QToolTip {
     border: 1px solid red;
-    border-radius: 2px;
     background-color: #00000000;
-    padding: 1px;
+    padding: 2px;
 }
 
 /******************************************************
@@ -1294,7 +1312,6 @@ QDialog#OptionsDialog QLabel#label_3 { /* Translations Missing? Label */
     qproperty-alignment: 'AlignVCenter | AlignLeft';
     padding-left: 8px;
     min-height: 60px;
-    color: #AB84BB;
 }
 
 QDialog#OptionsDialog #line,
@@ -1316,9 +1333,10 @@ QDialog#OptionsDialog QLabel#overriddenByCommandLineInfoLabel {
  ******************************************************/
 
 QWidget#OverviewPage QLabel#labelAlerts {
-     background-color: #AB84BB;
-     color: #ffffff;
+     background-color: red;
+     color: red;
      border-radius: 5px;
+     border: 1px solid;
      padding: 5px;
  }
 
@@ -1346,7 +1364,6 @@ QWidget .QFrame#frame .QLabel#label_5 { /* Wallet Label */
 
 QWidget .QFrame#frame .QLabel#labelWalletStatus { /* Wallet Sync Status */
     qproperty-alignment: 'AlignVCenter | AlignLeft';
-    color: #AB84BB;
 }
 
 QWidget .QFrame#frame .QLabel#labelSpendable { /* Spendable Header */
@@ -1457,7 +1474,7 @@ QWidget .QFrame#frameCoinJoin .QLabel#labelCoinJoinHeader { /* CoinJoin Header *
 
 QWidget .QFrame#frameCoinJoin .QLabel#labelCoinJoinSyncStatus { /* CoinJoin Sync Status */
     qproperty-alignment: 'AlignVCenter | AlignLeft';
-    color: #AB84BB;
+    color: blue;
 }
 
 QWidget .QFrame#frameCoinJoin  .QLabel#labelCoinJoinEnabledText { /* CoinJoin Enabled Status Label */
@@ -1545,7 +1562,7 @@ QWidget .QFrame#frame_2 .QLabel#label_4 { /* Recent Transactions Label */
 
 QWidget .QFrame#frame_2 .QLabel#labelTransactionsStatus { /* Recent Transactions Sync Status */
     qproperty-alignment: 'AlignVCenter | AlignLeft';
-    color: #AB84BB;
+    color: red;
 }
 
 QWidget .QFrame#frame_2 QListView { /* Transaction List */
@@ -1597,8 +1614,8 @@ QWidget#RPCConsole QLabel#banHeading {
 }
 
 QWidget#RPCConsole QLabel#label_alerts {
-    background-color: #AB84BB;
-    color: #ffffff;
+    background-color: red;
+    color: red;
     border-radius: 5px;
     padding: 5px;
 }
@@ -1630,7 +1647,7 @@ QWidget#RPCConsole QLabel#promptLabel { /* Prompt Label */
 }
 
 QWidget#RPCConsole QLineEdit#lineEdit { /* Console Input */
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 QWidget#RPCConsole .QToolButton { /* Console buttons fontbigger/fontsmaller/clear */
@@ -1641,11 +1658,11 @@ QWidget#RPCConsole .QToolButton { /* Console buttons fontbigger/fontsmaller/clea
 }
 
 QWidget#RPCConsole .QGroupBox #line { /* Network In Line */
-    background-color: #5e8c41;
+    background-color: red;
 }
 
 QWidget#RPCConsole .QGroupBox #line_2 { /* Network Out Line */
-    background-color: #AB84BB;
+    background-color: red;
 }
 
 #rpcAutoCompleter {
@@ -1658,6 +1675,12 @@ QWidget#RPCConsole .QGroupBox #line_2 { /* Network Out Line */
 }
 
 #rpcAutoCompleter::item {
+    background-color: #00000000;
+    color: red;
+}
+
+#rpcAutoCompleter::item:hover {
+    border-radius: 12px;
     background-color: #00000000;
     color: red;
 }
@@ -1697,7 +1720,7 @@ QDialog#SendCoinsDialog .QFrame#frameCoinControl .QLabel#labelCoinControlChangeL
 }
 
 QDialog#SendCoinsDialog .QFrame#frameCoinControl .QLabel#labelCoinControlInsuffFunds { /* Insufficient Funds Label */
-    color: #DC1919;
+    color: red;
 }
 
 QDialog#SendCoinsDialog .QScrollArea#scrollArea .QWidget#scrollAreaWidgetContents { /* Send To Widget */

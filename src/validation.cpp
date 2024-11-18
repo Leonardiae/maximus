@@ -711,7 +711,7 @@ bool MemPoolAccept::PreChecks(ATMPArgs& args, Workspace& ws)
             const CTransaction* ptxConflicting = m_pool.GetConflictTx(txin.prevout);
             if (ptxConflicting)
             {
-                // Transaction conflicts with mempool and RBF doesn't exist in Osmium
+                // Transaction conflicts with mempool and RBF doesn't exist in Maximus
                 return state.Invalid(TxValidationResult::TX_CONFLICT, "txn-mempool-conflict");
             }
         }
@@ -1165,17 +1165,15 @@ static std::pair<CAmount, CAmount> GetBlockSubsidyHelper(int nPrevBits, int nPre
     const bool isDevnet = Params().NetworkIDString() == CBaseChainParams::DEVNET;
 
     if (nPrevHeight == 0) {
-        nSubsidyBase = 8000;
-    } else if (nPrevHeight <= 500) {
-        nSubsidyBase = 0.1;
+        nSubsidyBase = 6000;
     } else {
-        nSubsidyBase = 1;
+        nSubsidyBase = 0.5;
     }
 
     CAmount nSubsidy = nSubsidyBase * COIN;
 
-    // semiannual decline of production by ~14.3%, projected ~1.21M coins max by year 2050+.
-    double reductionRatio = 1210000 / 172800;
+    // monthly decline of production by 0.8%, projected ~2.251M coins max by year 2050+.
+    double reductionRatio = 125;
     for (int i = consensusParams.nSubsidyHalvingInterval; i <= nPrevHeight; i += consensusParams.nSubsidyHalvingInterval) {
 
         nSubsidy -= nSubsidy / reductionRatio;
@@ -1186,10 +1184,10 @@ static std::pair<CAmount, CAmount> GetBlockSubsidyHelper(int nPrevBits, int nPre
         nSubsidy *= consensusParams.nHighSubsidyFactor;
     }
 
-    // Allocates 5% superblock rewards
+    // Allocates 15% superblock rewards
     CAmount nSuperblockPart{};
     if (nPrevHeight > consensusParams.nSuperblockStartBlock) {
-        nSuperblockPart = nSubsidy / 20;
+        nSuperblockPart = nSubsidy / 20 * 3;
     }
 
     return {nSubsidy - nSuperblockPart, nSuperblockPart};
@@ -1216,12 +1214,7 @@ CAmount GetBlockSubsidy(const CBlockIndex* const pindex, const Consensus::Params
 
 CAmount GetMasternodePayment(int nHeight, CAmount blockValue, bool fV20Active)
 {
-    CAmount ret = blockValue * 9 / 19; // 50% after superblock reduction
-
-    const int nMNPIBlock = Params().GetConsensus().nMasternodePaymentsIncreaseBlock;
-    
-    if(nHeight >= nMNPIBlock)                  ret = blockValue * 72 / 95; // 65000 - 80% - 2024-06-19
-
+    CAmount ret = blockValue * 13 / 16;
     return ret;
 }
 
@@ -1965,7 +1958,7 @@ static int64_t nTimeCreditPool = 0;
 static int64_t nTimeValueValid = 0;
 static int64_t nTimePayeeValid = 0;
 static int64_t nTimeProcessSpecial = 0;
-static int64_t nTimeOsmiumSpecific = 0;
+static int64_t nTimeMaximusSpecific = 0;
 static int64_t nTimeConnect = 0;
 static int64_t nTimeIndexConnect = 0;
 static int64_t nTimeIndexWrite = 0;
@@ -2111,7 +2104,7 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
         }
     }
 
-    /// OSMIUM: Check superblock start
+    /// MAXIMUS: Check superblock start
 
     // make sure old budget is the real one
     if (pindex->nHeight == m_params.GetConsensus().nSuperblockStartBlock &&
@@ -2120,7 +2113,7 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
             LogPrintf("ERROR: ConnectBlock(): invalid superblock start\n");
             return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-sb-start");
     }
-    /// END OSMIUM
+    /// END MAXIMUS
 
     // Enforce BIP68 (sequence locks)
     int nLockTimeFlags = 0;
@@ -2158,7 +2151,7 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
     // MUST process special txes before updating UTXO to ensure consistency between mempool and block processing
     std::optional<MNListUpdates> mnlist_updates_opt{std::nullopt};
     if (!ProcessSpecialTxsInBlock(block, pindex, m_mnhfManager, *m_quorum_block_processor, *m_clhandler, m_params.GetConsensus(), view, fJustCheck, fScriptChecks, state, mnlist_updates_opt)) {
-        return error("ConnectBlock(OSMIUM): ProcessSpecialTxsInBlock for block %s failed with %s",
+        return error("ConnectBlock(MAXIMUS): ProcessSpecialTxsInBlock for block %s failed with %s",
                      pindex->GetBlockHash().ToString(), state.ToString());
     }
 
@@ -2303,7 +2296,7 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
     LogPrint(BCLog::BENCHMARK, "    - Verify %u txins: %.2fms (%.3fms/txin) [%.2fs (%.2fms/blk)]\n", nInputs - 1, MILLI * (nTime4 - nTime2), nInputs <= 1 ? 0 : MILLI * (nTime4 - nTime2) / (nInputs-1), nTimeVerify * MICRO, nTimeVerify * MILLI / nBlocksTotal);
 
 
-    // OSMIUM
+    // MAXIMUS
 
     // It's possible that we simply don't have enough data and this could fail
     // (i.e. block itself could be a correct one and we need to store it),
@@ -2311,7 +2304,7 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
     // the peer who sent us this block is missing some data and wasn't able
     // to recognize that block is actually invalid.
 
-    // OSMIUM : CHECK TRANSACTIONS FOR INSTANTSEND
+    // MAXIMUS : CHECK TRANSACTIONS FOR INSTANTSEND
 
     if (m_isman->RejectConflictingBlocks()) {
         // Require other nodes to comply, send them some data in case they are missing it.
@@ -2320,13 +2313,13 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
             if (tx->vin.empty()) continue;
             while (llmq::CInstantSendLockPtr conflictLock = m_isman->GetConflictingLock(*tx)) {
                 if (m_clhandler->HasChainLock(pindex->nHeight, pindex->GetBlockHash())) {
-                    LogPrint(BCLog::ALL, "ConnectBlock(OSMIUM): chain-locked transaction %s overrides islock %s\n",
+                    LogPrint(BCLog::ALL, "ConnectBlock(MAXIMUS): chain-locked transaction %s overrides islock %s\n",
                             tx->GetHash().ToString(), ::SerializeHash(*conflictLock).ToString());
                     m_isman->RemoveConflictingLock(::SerializeHash(*conflictLock), *conflictLock);
                 } else {
                     // The node which relayed this should switch to correct chain.
                     // TODO: relay instantsend data/proof.
-                    LogPrintf("ERROR: ConnectBlock(OSMIUM): transaction %s conflicts with transaction lock %s\n", tx->GetHash().ToString(), conflictLock->txid.ToString());
+                    LogPrintf("ERROR: ConnectBlock(MAXIMUS): transaction %s conflicts with transaction lock %s\n", tx->GetHash().ToString(), conflictLock->txid.ToString());
                     return state.Invalid(BlockValidationResult::BLOCK_CHAINLOCK, "conflict-tx-lock");
                 }
             }
@@ -2336,7 +2329,7 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
     int64_t nTime5_1 = GetTimeMicros(); nTimeISFilter += nTime5_1 - nTime4;
     LogPrint(BCLog::BENCHMARK, "      - IS filter: %.2fms [%.2fs (%.2fms/blk)]\n", MILLI * (nTime5_1 - nTime4), nTimeISFilter * MICRO, nTimeISFilter * MILLI / nBlocksTotal);
 
-    // OSMIUM : MODIFIED TO CHECK MASTERNODE PAYMENTS AND SUPERBLOCKS
+    // MAXIMUS : MODIFIED TO CHECK MASTERNODE PAYMENTS AND SUPERBLOCKS
 
     // TODO: resync data (both ways?) and try to reprocess this block later.
     CAmount blockSubsidy = GetBlockSubsidy(pindex, m_params.GetConsensus());
@@ -2347,7 +2340,7 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
     LogPrint(BCLog::BENCHMARK, "      - GetBlockSubsidy: %.2fms [%.2fs (%.2fms/blk)]\n", MILLI * (nTime5_2 - nTime5_1), nTimeSubsidy * MICRO, nTimeSubsidy * MILLI / nBlocksTotal);
 
     if (!CheckCreditPoolDiffForBlock(block, pindex, m_params.GetConsensus(), blockSubsidy, state)) {
-        return error("ConnectBlock(OSMIUM): CheckCreditPoolDiffForBlock for block %s failed with %s",
+        return error("ConnectBlock(MAXIMUS): CheckCreditPoolDiffForBlock for block %s failed with %s",
                      pindex->GetBlockHash().ToString(), state.ToString());
     }
 
@@ -2356,7 +2349,7 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
 
     if (!MasternodePayments::IsBlockValueValid(*sporkManager, *governance, *::masternodeSync, block, pindex->nHeight, blockSubsidy + feeReward, strError)) {
         // NOTE: Do not punish, the node might be missing governance data
-        LogPrintf("ERROR: ConnectBlock(OSMIUM): %s\n", strError);
+        LogPrintf("ERROR: ConnectBlock(MAXIMUS): %s\n", strError);
         return state.Invalid(BlockValidationResult::BLOCK_RESULT_UNSET, "bad-cb-amount");
     }
 
@@ -2365,17 +2358,17 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
 
     if (!MasternodePayments::IsBlockPayeeValid(*sporkManager, *governance, *::masternodeSync, *block.vtx[0], pindex->pprev, blockSubsidy, feeReward)) {
         // NOTE: Do not punish, the node might be missing governance data
-        LogPrintf("ERROR: ConnectBlock(OSMIUM): couldn't find masternode or superblock payments\n");
+        LogPrintf("ERROR: ConnectBlock(MAXIMUS): couldn't find masternode or superblock payments\n");
         return state.Invalid(BlockValidationResult::BLOCK_RESULT_UNSET, "bad-cb-payee");
     }
 
     int64_t nTime5_5 = GetTimeMicros(); nTimePayeeValid += nTime5_5 - nTime5_4;
     LogPrint(BCLog::BENCHMARK, "      - IsBlockPayeeValid: %.2fms [%.2fs (%.2fms/blk)]\n", MILLI * (nTime5_5 - nTime5_4), nTimePayeeValid * MICRO, nTimePayeeValid * MILLI / nBlocksTotal);
 
-    int64_t nTime5 = GetTimeMicros(); nTimeOsmiumSpecific += nTime5 - nTime4;
-    LogPrint(BCLog::BENCHMARK, "    - Osmium specific: %.2fms [%.2fs (%.2fms/blk)]\n", MILLI * (nTime5 - nTime4), nTimeOsmiumSpecific * MICRO, nTimeOsmiumSpecific * MILLI / nBlocksTotal);
+    int64_t nTime5 = GetTimeMicros(); nTimeMaximusSpecific += nTime5 - nTime4;
+    LogPrint(BCLog::BENCHMARK, "    - Maximus specific: %.2fms [%.2fs (%.2fms/blk)]\n", MILLI * (nTime5 - nTime4), nTimeMaximusSpecific * MICRO, nTimeMaximusSpecific * MILLI / nBlocksTotal);
 
-    // END OSMIUM
+    // END MAXIMUS
 
     if (fJustCheck)
         return true;
@@ -4855,7 +4848,7 @@ bool CChainState::RollforwardBlock(const CBlockIndex* pindex, CCoinsViewCache& i
     BlockValidationState state;
     std::optional<MNListUpdates> mnlist_updates_opt{std::nullopt};
     if (!ProcessSpecialTxsInBlock(block, pindex, m_mnhfManager, *m_quorum_block_processor, *m_clhandler, m_params.GetConsensus(), inputs, false /*fJustCheck*/, false /*fScriptChecks*/, state, mnlist_updates_opt)) {
-        return error("RollforwardBlock(OSMIUM): ProcessSpecialTxsInBlock for block %s failed with %s",
+        return error("RollforwardBlock(MAXIMUS): ProcessSpecialTxsInBlock for block %s failed with %s",
             pindex->GetBlockHash().ToString(), state.ToString());
     }
 
@@ -4925,22 +4918,22 @@ bool CChainState::RollforwardBlock(const CBlockIndex* pindex, CCoinsViewCache& i
 
     if (fAddressIndex) {
         if (!pblocktree->WriteAddressIndex(addressIndex)) {
-            return error("RollforwardBlock(OSMIUM): Failed to write address index");
+            return error("RollforwardBlock(MAXIMUS): Failed to write address index");
         }
 
         if (!pblocktree->UpdateAddressUnspentIndex(addressUnspentIndex)) {
-            return error("RollforwardBlock(OSMIUM): Failed to write address unspent index");
+            return error("RollforwardBlock(MAXIMUS): Failed to write address unspent index");
         }
     }
 
     if (fSpentIndex) {
         if (!pblocktree->UpdateSpentIndex(spentIndex))
-            return error("RollforwardBlock(OSMIUM): Failed to write transaction index");
+            return error("RollforwardBlock(MAXIMUS): Failed to write transaction index");
     }
 
     if (fTimestampIndex) {
         if (!pblocktree->WriteTimestampIndex(CTimestampIndexKey(pindex->nTime, pindex->GetBlockHash())))
-            return error("RollforwardBlock(OSMIUM): Failed to write timestamp index");
+            return error("RollforwardBlock(MAXIMUS): Failed to write timestamp index");
     }
 
     return true;
@@ -4978,7 +4971,7 @@ bool CChainState::ReplayBlocks()
         assert(pindexFork != nullptr);
         const bool fDIP0003Active = pindexOld->nHeight >= m_params.GetConsensus().DIP0003Height;
         if (fDIP0003Active && !m_evoDb.VerifyBestBlock(pindexOld->GetBlockHash())) {
-            return error("ReplayBlocks(OSMIUM): Found EvoDB inconsistency");
+            return error("ReplayBlocks(MAXIMUS): Found EvoDB inconsistency");
         }
     }
 
