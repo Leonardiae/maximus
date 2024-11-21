@@ -283,7 +283,7 @@ namespace GUIUtil
 
     enum class FontFamily {
         SystemDefault,
-        Montserrat,
+        Merriweather,
     };
 
     FontFamily fontFamilyFromString(const QString& strFamily);
@@ -333,7 +333,7 @@ namespace GUIUtil
     void setApplicationFont();
 
     /** Workaround to set correct font styles in all themes since there is a bug in macOS which leads to
-        issues loading variations of montserrat in css it also keeps track of the set fonts to update on
+        issues loading variations of Merriweather in css it also keeps track of the set fonts to update on
         theme changes. */
     void setFont(const std::vector<QWidget*>& vecWidgets, FontWeight weight, int nPointSize = -1, bool fItalic = false);
 

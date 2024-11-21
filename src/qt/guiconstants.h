@@ -36,7 +36,7 @@ static const int TOOLTIP_WRAP_THRESHOLD = 80;
 #define SPINNER_FRAMES 90
 
 #define QAPP_ORG_NAME "Maximus"
-#define QAPP_ORG_DOMAIN "maximus.space"
+#define QAPP_ORG_DOMAIN "maximuschain.com"
 #define QAPP_APP_NAME_DEFAULT "Maximus-Qt"
 #define QAPP_APP_NAME_TESTNET "Maximus-Qt-testnet"
 #define QAPP_APP_NAME_DEVNET "Maximus-Qt-%s"

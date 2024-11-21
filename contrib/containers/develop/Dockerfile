@@ -38,7 +38,7 @@ RUN groupadd docker && \
 ENV DEBIAN_FRONTEND="dialog"
 
 # Expose Maximus P2P and RPC ports for main network and test networks
-EXPOSE 9968 9969 19968 19969
+EXPOSE 9938 9939 19938 19939
 
 # We're done, switch back to non-privileged user
 USER maximus

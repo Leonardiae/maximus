@@ -8,10 +8,10 @@ services:
     tty: true         # Equivalent to -t
     stdin_open: true  # Equivalent to -i
     ports:
-      - "9968:9968"           # Mainnet Ports
-      - "9969:9969"
-      - "19968:19968"         # Testnet Ports
-      - "19969:19969"
+      - "9938:9938"           # Mainnet Ports
+      - "9939:9939"
+      - "19938:19938"         # Testnet Ports
+      - "19939:19939"
 
 # A note about volumes:
 #

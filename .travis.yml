@@ -163,10 +163,10 @@ before_script:
     # See https://github.com/travis-ci/travis-ci/issues/4704. If this gets fixed, this line can also be removed.
     - python3 -c 'import os,sys,fcntl; flags = fcntl.fcntl(sys.stdout, fcntl.F_GETFL); fcntl.fcntl(sys.stdout, fcntl.F_SETFL, flags&~os.O_NONBLOCK);'
     # Build docker image only for develop branch of the main repo
-    - if [ "$TRAVIS_REPO_SLUG" != "maximus-labs/maximus" -o "$TRAVIS_BRANCH" != "develop" -o "$TRAVIS_PULL_REQUEST" != "false" ]; then export DOCKER_BUILD="false"; echo DOCKER_BUILD=$DOCKER_BUILD; fi
+    - if [ "$TRAVIS_REPO_SLUG" != "maximus-chain/maximus" -o "$TRAVIS_BRANCH" != "develop" -o "$TRAVIS_PULL_REQUEST" != "false" ]; then export DOCKER_BUILD="false"; echo DOCKER_BUILD=$DOCKER_BUILD; fi
     # TODO(ignore if don't use travis): Check keys and signed commits
-    #- if [ "$TRAVIS_REPO_SLUG" = "maximus-labs/maximus" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then travis_retry gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys $(<contrib/verify-commits/trusted-keys); fi
-    #- if [ "$TRAVIS_REPO_SLUG" = "maximus-labs/maximus" -a "$TRAVIS_EVENT_TYPE" = "cron" ]; then travis_wait 30 contrib/verify-commits/verify-commits.py; fi
+    #- if [ "$TRAVIS_REPO_SLUG" = "maximus-chain/maximus" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then travis_retry gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys $(<contrib/verify-commits/trusted-keys); fi
+    #- if [ "$TRAVIS_REPO_SLUG" = "maximus-chain/maximus" -a "$TRAVIS_EVENT_TYPE" = "cron" ]; then travis_wait 30 contrib/verify-commits/verify-commits.py; fi
 after_script:
     - echo $TRAVIS_COMMIT_RANGE
     - echo $TRAVIS_COMMIT_LOG

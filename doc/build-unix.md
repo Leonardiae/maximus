@@ -301,7 +301,7 @@ Setup and Build Example: Arch Linux
 This example lists the steps necessary to setup and build a command line only, non-wallet distribution of the latest changes on Arch Linux:
 
     pacman -S git base-devel boost libevent python
-    git clone https://github.com/maximus-labs/maximus.git
+    git clone https://github.com/maximus-chain/maximus.git
     cd maximus/
     ./autogen.sh
     ./configure --disable-wallet --without-gui --without-miniupnpc

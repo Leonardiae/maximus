@@ -107,12 +107,12 @@ static const FontFamily defaultFontFamily = FontFamily::SystemDefault;
 static const int defaultFontSize = 12;
 static const double fontScaleSteps = 0.01;
 #ifdef Q_OS_MAC
-static const QFont::Weight defaultFontWeightNormal = QFont::ExtraLight;
-static const QFont::Weight defaultFontWeightBold = QFont::Medium;
+static const QFont::Weight defaultFontWeightNormal = QFont::Light;
+static const QFont::Weight defaultFontWeightBold = QFont::Bold;
 static const int defaultFontScale = 0;
 #else
 static const QFont::Weight defaultFontWeightNormal = QFont::Light;
-static const QFont::Weight defaultFontWeightBold = QFont::Medium;
+static const QFont::Weight defaultFontWeightBold = QFont::Bold;
 static const int defaultFontScale = 0;
 #endif
 
@@ -153,44 +153,41 @@ static const std::map<ThemedColor, QColor> themedColors = {
 };
 
 static const std::map<ThemedColor, QColor> themedDarkColors = {
-    { ThemedColor::DEFAULT, QColor(199, 199, 199) },
-    { ThemedColor::PRIMARY, QColor(171, 132, 187) },
+    { ThemedColor::DEFAULT, QColor(119, 131, 143) }, 
+    { ThemedColor::PRIMARY, QColor(255, 204, 97) },
     { ThemedColor::UNCONFIRMED, QColor(160, 165, 168) },
     { ThemedColor::BLUE, QColor(106, 172, 251) },
-    { ThemedColor::ORANGE, QColor(231, 193, 59) },
-    { ThemedColor::RED, QColor(220, 25, 25) },
-    { ThemedColor::GREEN, QColor(167, 197, 103) },
-    { ThemedColor::BAREADDRESS, QColor(181, 186, 189) },
-    { ThemedColor::TX_STATUS_OPENUNTILDATE, QColor(64, 64, 255) },
-    { ThemedColor::BACKGROUND_WIDGET, QColor(30, 30, 30) },
-    { ThemedColor::BORDER_WIDGET, QColor(30, 30, 30) },
-    { ThemedColor::BACKGROUND_NETSTATS, QColor(17, 19, 20) },
-    { ThemedColor::BORDER_NETSTATS, QColor(17, 19, 20) },
-    { ThemedColor::QR_PIXEL, QColor(171, 132, 187) },
+    { ThemedColor::ORANGE, QColor(255, 204, 97) },
+    { ThemedColor::RED, QColor(240, 0, 0) },
+    { ThemedColor::GREEN, QColor(111, 199, 186) },
+    { ThemedColor::BAREADDRESS, QColor(110, 120, 132) },
+    { ThemedColor::TX_STATUS_OPENUNTILDATE, QColor(255, 204, 97) },
+    { ThemedColor::BACKGROUND_WIDGET, QColor(46, 41, 53) },
+    { ThemedColor::BORDER_WIDGET, QColor(46, 41, 53) },
+    { ThemedColor::BACKGROUND_NETSTATS, QColor(46, 41, 53) },
+    { ThemedColor::BORDER_NETSTATS, QColor(46, 41, 53) },
+    { ThemedColor::QR_PIXEL, QColor(255, 204, 97) },
     { ThemedColor::ICON_ALTERNATIVE_COLOR, QColor(74, 74, 75) },
 };
 
 static const std::map<ThemedStyle, QString> themedStyles = {
     { ThemedStyle::TS_INVALID, "background:#a84832;" },
-    { ThemedStyle::TS_ERROR, "color:#a84832;" },
-    { ThemedStyle::TS_WARNING, "color:#999900;" },
-    { ThemedStyle::TS_SUCCESS, "color:#5e8c41;" },
-    { ThemedStyle::TS_COMMAND, "color:#008de4;" },
-    { ThemedStyle::TS_PRIMARY, "color:#333;" },
-    { ThemedStyle::TS_SECONDARY, "color:#444;" },
+    { ThemedStyle::TS_ERROR, "color:#e35052;" },
+    { ThemedStyle::TS_WARNING, "color:#fcb92d;" },
+    { ThemedStyle::TS_SUCCESS, "color:#6fc7ba;" },
+    { ThemedStyle::TS_COMMAND, "color:#2f8b7e;" },
+    { ThemedStyle::TS_PRIMARY, "color:#221e27;" },
+    { ThemedStyle::TS_SECONDARY, "color:#83909C;" },
 };
 
 static const std::map<ThemedStyle, QString> themedDarkStyles = {
     { ThemedStyle::TS_INVALID, "background:#a84832;" },
-    // { ThemedStyle::TS_ERROR, "color:#a84832;" },
-    { ThemedStyle::TS_ERROR, "color:#dc1919;" },
-    { ThemedStyle::TS_WARNING, "color:#999900;" },
-    { ThemedStyle::TS_SUCCESS, "color:#5e8c41;" },
-    { ThemedStyle::TS_COMMAND, "color:#ab84bb;" },
-    // { ThemedStyle::TS_PRIMARY, "color:#c7c7c7;" },
-    { ThemedStyle::TS_PRIMARY, "color:#fff;" },
-    // { ThemedStyle::TS_SECONDARY, "color:#aaa;" },
-    { ThemedStyle::TS_SECONDARY, "color:#B5BABD;" },
+    { ThemedStyle::TS_ERROR, "color:#e35052;" },
+    { ThemedStyle::TS_WARNING, "color:#fcb92d;" },
+    { ThemedStyle::TS_SUCCESS, "color:#2f8b7e;" },
+    { ThemedStyle::TS_COMMAND, "color:#ffcc61;" },
+    { ThemedStyle::TS_PRIMARY, "color:#ffffff;" },
+    { ThemedStyle::TS_SECONDARY, "color:#6E7884;" },
 };
 
 QColor getThemedQColor(ThemedColor color)
@@ -995,8 +992,8 @@ FontFamily fontFamilyFromString(const QString& strFamily)
     if (strFamily == "SystemDefault") {
         return FontFamily::SystemDefault;
     }
-    if (strFamily == "Montserrat") {
-        return FontFamily::Montserrat;
+    if (strFamily == "Merriweather") {
+        return FontFamily::Merriweather;
     }
     throw std::invalid_argument(strprintf("Invalid font-family: %s", strFamily.toStdString()));
 }
@@ -1006,8 +1003,8 @@ QString fontFamilyToString(FontFamily family)
     switch (family) {
     case FontFamily::SystemDefault:
         return "SystemDefault";
-    case FontFamily::Montserrat:
-        return "Montserrat";
+    case FontFamily::Merriweather:
+        return "Merriweather";
     default:
         assert(false);
     }
@@ -1033,15 +1030,8 @@ FontFamily getFontFamily()
 bool weightFromArg(int nArg, QFont::Weight& weight)
 {
     const std::map<int, QFont::Weight> mapWeight{
-        {0, QFont::Thin},
-        {1, QFont::ExtraLight},
-        {2, QFont::Light},
-        {3, QFont::Normal},
-        {4, QFont::Medium},
-        {5, QFont::DemiBold},
-        {6, QFont::Bold},
-        {7, QFont::ExtraBold},
-        {8, QFont::Black}
+        {0, QFont::Light},
+        {1, QFont::Bold},
     };
     auto it = mapWeight.find(nArg);
     if (it == mapWeight.end()) {
@@ -1054,15 +1044,8 @@ bool weightFromArg(int nArg, QFont::Weight& weight)
 int weightToArg(const QFont::Weight weight)
 {
     const std::map<QFont::Weight, int> mapWeight{
-        {QFont::Thin, 0},
-        {QFont::ExtraLight, 1},
-        {QFont::Light, 2},
-        {QFont::Normal, 3},
-        {QFont::Medium, 4},
-        {QFont::DemiBold, 5},
-        {QFont::Bold, 6},
-        {QFont::ExtraBold, 7},
-        {QFont::Black, 8}
+        {QFont::Light, 0},
+        {QFont::Bold, 1},
     };
     assert(mapWeight.count(weight));
     return mapWeight.find(weight)->second;
@@ -1143,20 +1126,20 @@ bool loadFonts()
     // Before any font changes store the applications default font to use it as SystemDefault.
     osDefaultFont = std::make_unique<QFont>(QApplication::font());
 
-    QString family = fontFamilyToString(FontFamily::Montserrat);
+    QString family = fontFamilyToString(FontFamily::Merriweather);
     QString italic = "Italic";
 
     std::map<QString, bool> mapStyles{
-        {"Thin", true},
-        {"ExtraLight", true},
+        {"Thin", false},
+        {"ExtraLight", false},
         {"Light", true},
         {"Italic", false},
         {"Regular", false},
-        {"Medium", true},
-        {"SemiBold", true},
+        {"Medium", false},
+        {"SemiBold", false},
         {"Bold", true},
-        {"ExtraBold", true},
-        {"Black", true},
+        {"ExtraBold", false},
+        {"Black", false},
     };
 
     QFontDatabase database;
@@ -1209,9 +1192,7 @@ bool loadFonts()
             QFont font = getFont(family, weight, false, defaultFontSize);
             return TextWidth(QFontMetrics(font), ("Check the width of this text to see if the weight change has an impact!"));
         };
-        std::vector<QFont::Weight> vecWeights{QFont::Thin, QFont::ExtraLight, QFont::Light,
-                                              QFont::Normal, QFont::Medium, QFont::DemiBold,
-                                              QFont::Bold, QFont::ExtraBold, QFont::Black};
+        std::vector<QFont::Weight> vecWeights{QFont::Light, QFont::Bold};
         std::vector<QFont::Weight> vecSupported;
         QFont::Weight prevWeight = vecWeights.front();
         for (auto weight = vecWeights.begin() + 1; weight != vecWeights.end(); ++weight) {
@@ -1230,7 +1211,7 @@ bool loadFonts()
     };
 
     mapSupportedWeights.insert(std::make_pair(FontFamily::SystemDefault, supportedWeights(FontFamily::SystemDefault)));
-    mapSupportedWeights.insert(std::make_pair(FontFamily::Montserrat, supportedWeights(FontFamily::Montserrat)));
+    mapSupportedWeights.insert(std::make_pair(FontFamily::Merriweather, supportedWeights(FontFamily::Merriweather)));
 
     auto getBestMatch = [&](FontFamily fontFamily, QFont::Weight targetWeight) {
         auto& vecSupported = mapSupportedWeights[fontFamily];
@@ -1262,7 +1243,7 @@ bool loadFonts()
     };
 
     addBestDefaults(FontFamily::SystemDefault);
-    addBestDefaults(FontFamily::Montserrat);
+    addBestDefaults(FontFamily::Merriweather);
 
     // Load supported defaults. May become overwritten later.
     mapWeights = mapDefaultWeights;
@@ -1283,8 +1264,8 @@ void setApplicationFont()
 
     std::unique_ptr<QFont> font;
 
-    if (fontFamily == FontFamily::Montserrat) {
-        QString family = fontFamilyToString(FontFamily::Montserrat);
+    if (fontFamily == FontFamily::Merriweather) {
+        QString family = fontFamilyToString(FontFamily::Merriweather);
 #ifdef Q_OS_MAC
         if (getFontWeightNormal() != getFontWeightNormalDefault()) {
             font = std::make_unique<QFont>(getFontNormal());
@@ -1433,17 +1414,12 @@ QFont getFont(FontFamily family, QFont::Weight qWeight, bool fItalic, int nPoint
         return font;
     }
 
-    if (family == FontFamily::Montserrat) {
-        static std::map<QFont::Weight, QString> mapMontserratMapping{
-            {QFont::Thin, "Thin"},
-            {QFont::ExtraLight, "ExtraLight"},
+    if (family == FontFamily::Merriweather) {
+        static std::map<QFont::Weight, QString> mapMerriweatherMapping{
             {QFont::Light, "Light"},
-            {QFont::Medium, "Medium"},
-            {QFont::DemiBold, "SemiBold"},
-            {QFont::ExtraBold, "ExtraBold"},
-            {QFont::Black, "Black"},
+            {QFont::Black, "Bold"},
 #ifdef Q_OS_MAC
-            {QFont::Normal, "Regular"},
+            {QFont::Normal, "Light"},
             {QFont::Bold, "Bold"},
 #else
             {QFont::Normal, ""},
@@ -1451,11 +1427,11 @@ QFont getFont(FontFamily family, QFont::Weight qWeight, bool fItalic, int nPoint
 #endif
         };
 
-        assert(mapMontserratMapping.count(qWeight));
+        assert(mapMerriweatherMapping.count(qWeight));
 
 #ifdef Q_OS_MAC
 
-        QString styleName = mapMontserratMapping[qWeight];
+        QString styleName = mapMerriweatherMapping[qWeight];
 
         if (fItalic) {
             if (styleName == "Regular") {
@@ -1465,10 +1441,10 @@ QFont getFont(FontFamily family, QFont::Weight qWeight, bool fItalic, int nPoint
             }
         }
 
-        font.setFamily(fontFamilyToString(FontFamily::Montserrat));
+        font.setFamily(fontFamilyToString(FontFamily::Merriweather));
         font.setStyleName(styleName);
 #else
-        font.setFamily(fontFamilyToString(FontFamily::Montserrat) + " " + mapMontserratMapping[qWeight]);
+        font.setFamily(fontFamilyToString(FontFamily::Merriweather) + " " + mapMerriweatherMapping[qWeight]);
         font.setWeight(qWeight);
         font.setStyle(fItalic ? QFont::StyleItalic : QFont::StyleNormal);
 #endif

@@ -802,7 +802,7 @@ void SetupServerArgs(NodeContext& node)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/maximus-labs/maximus>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/maximus-chain/maximus>";
 
     return CopyrightHolders(_("Copyright (C)").translated, 2014, COPYRIGHT_YEAR) + "\n" +
            "\n" +

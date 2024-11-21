@@ -369,7 +369,7 @@ other input.
 
 Valgrind is a programming tool for memory debugging, memory leak detection, and
 profiling. The repo contains a Valgrind suppressions file
-([`valgrind.supp`](https://github.com/maximus-labs/maximus/blob/master/contrib/valgrind.supp))
+([`valgrind.supp`](https://github.com/maximus-chain/maximus/blob/master/contrib/valgrind.supp))
 which includes known Valgrind warnings in our dependencies that cannot be fixed
 in-tree. Example use:
 
@@ -551,7 +551,7 @@ Threads
     : Universal plug-and-play startup/shutdown.
 
   - [ThreadSocketHandler (`d-net`)](https://doxygen.bitcoincore.org/class_c_connman.html#a765597cbfe99c083d8fa3d61bb464e34)
-    : Sends/Receives data from peers on port 9969.
+    : Sends/Receives data from peers on port 9939.
 
   - [ThreadOpenAddedConnections (`d-addcon`)](https://doxygen.bitcoincore.org/class_c_connman.html#a0b787caf95e52a346a2b31a580d60a62)
     : Opens network connections to added nodes.

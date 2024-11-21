@@ -21,7 +21,7 @@ from textwrap import indent
 
 WORKINGDIR = "/tmp/maximus_verify_binaries"
 HASHFILE = "hashes.tmp"
-HOST1="https://github.com/maximus-labs/maximus/releases/download/v"
+HOST1="https://github.com/maximus-chain/maximus/releases/download/v"
 HOST2="https://maximuscore-binaries.thepasta.org/file/maximuscore-binaries/"
 VERSIONPREFIX=""
 SIGNATUREFILENAME = "SHA256SUMS.asc"

@@ -4,7 +4,7 @@ This issue tracker is only for technical issues related to Maximus Core.
 
 General Maximus questions and/or support requests and are best directed to the [Dashpay Reddit](https://www.reddit.com/r/dashpay/).
 
-To report critical security issues, email infosec@maximus.space and/or see the MAXIMUS bug bounty program on [Bugcrowd](https://bugcrowd.com/maximusdigitalcash) instead of creating Github issues.
+To report critical security issues, email infosec@maximuschain.com and/or see the MAXIMUS bug bounty program on [Bugcrowd](https://bugcrowd.com/maximusdigitalcash) instead of creating Github issues.
 
 ### Describe the issue
 
