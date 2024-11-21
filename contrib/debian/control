@@ -21,9 +21,9 @@ Build-Depends: debhelper,
  python,
  libzmq3-dev
 Standards-Version: 3.9.2
-Homepage: https://www.maximus.space/
-Vcs-Git: git://github.com/maximus-labs/maximus.git
-Vcs-Browser: https://github.com/maximus-labs/maximus
+Homepage: https://www.maximuschain.com/
+Vcs-Git: git://github.com/maximus-chain/maximus.git
+Vcs-Browser: https://github.com/maximus-chain/maximus
 
 Package: maximusd
 Architecture: any

@@ -247,7 +247,7 @@ public:
         // This is fine at runtime as we'll fall back to using them as an addrfetch if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
-        vSeeds.emplace_back("dnsseed.maximus.space");
+        vSeeds.emplace_back("dnsseed.maximuschain.com");
 
         // Maximus addresses start with 'M'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,50);
@@ -416,7 +416,7 @@ public:
 
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.emplace_back("testnet-seed.maximus.space"); // Just a static list of stable node(s), only supports x9
+        vSeeds.emplace_back("testnet-seed.maximuschain.com"); // Just a static list of stable node(s), only supports x9
 
         // Testnet Maximus addresses start with 'm'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,110);
@@ -583,7 +583,7 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        //vSeeds.push_back(CDNSSeedData("maximus.space",  "devnet-seed.maximus.space"));
+        //vSeeds.push_back(CDNSSeedData("maximuschain.com",  "devnet-seed.maximuschain.com"));
 
         // Devnet Maximus addresses start with 'm'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,110);

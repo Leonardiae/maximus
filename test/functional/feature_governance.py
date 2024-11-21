@@ -26,7 +26,7 @@ class MaximusGovernanceTest (MaximusTestFramework):
             "end_epoch": proposal_time + 24 * 60 * 60,
             "payment_amount": float(amount),
             "payment_address": payment_address,
-            "url": "https://maximus.space"
+            "url": "https://maximuschain.com"
         }
         proposal_hex = ''.join(format(x, '02x') for x in json.dumps(proposal_template).encode())
         collateral_hash = self.nodes[0].gobject("prepare", parent_hash, proposal_rev, proposal_time, proposal_hex)

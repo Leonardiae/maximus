@@ -1,7 +1,7 @@
 Maximus Core
 ==========
 
-This is the official reference wallet for Maximus digital currency and comprises the backbone of the Maximus peer-to-peer network. You can [download Maximus Core](https://www.maximus.space/downloads/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for Maximus digital currency and comprises the backbone of the Maximus peer-to-peer network. You can [download Maximus Core](https://www.maximuschain.com/downloads/) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------

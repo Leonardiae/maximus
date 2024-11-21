@@ -47,7 +47,7 @@ pkg install autoconf automake boost-libs git gmake libevent libtool pkgconf
 ### 2. Clone Maximus Repo
 Now that `git` and all the required dependencies are installed, let's clone the Maximus Core repository to a directory. All build scripts and commands will run from this directory.
 ``` bash
-git clone https://github.com/maximus-labs/maximus.git
+git clone https://github.com/maximus-chain/maximus.git
 ```
 
 ### 3. Install Optional Dependencies
@@ -59,7 +59,7 @@ pkg install gmp
 ```
 
 #### Wallet Dependencies
-It is not necessary to build wallet functionality to run maximusd or the GUI. To enable legacy wallets, you must install `db5`. To enable [descriptor wallets](https://github.com/maximus-labs/maximus/blob/master/doc/descriptors.md), `sqlite3` is required. Skip `db5` if you intend to *exclusively* use descriptor wallets
+It is not necessary to build wallet functionality to run maximusd or the GUI. To enable legacy wallets, you must install `db5`. To enable [descriptor wallets](https://github.com/maximus-chain/maximus/blob/master/doc/descriptors.md), `sqlite3` is required. Skip `db5` if you intend to *exclusively* use descriptor wallets
 
 ###### Legacy Wallet Support
 `db5` is required to enable support for legacy wallets. Skip if you don't intend to use legacy wallets

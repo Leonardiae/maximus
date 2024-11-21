@@ -3,9 +3,9 @@ Maximus Core staging tree
 
 |CI|master|develop|
 |-|-|-|
-|Gitlab|[![Build Status](https://gitlab.com/maximus-labs/maximus/badges/master/pipeline.svg)](https://gitlab.com/maximus-labs/maximus/-/tree/master)|[![Build Status](https://gitlab.com/maximus-labs/maximus/badges/develop/pipeline.svg)](https://gitlab.com/maximus-labs/maximus/-/tree/develop)|
+|Gitlab|[![Build Status](https://gitlab.com/maximus-chain/maximus/badges/master/pipeline.svg)](https://gitlab.com/maximus-chain/maximus/-/tree/master)|[![Build Status](https://gitlab.com/maximus-chain/maximus/badges/develop/pipeline.svg)](https://gitlab.com/maximus-chain/maximus/-/tree/develop)|
 
-https://www.maximus.space
+https://www.maximuschain.com
 
 For an immediately usable, binary version of the Maximus Core software, see releases in our GitHub.
 
@@ -29,7 +29,7 @@ Development Process
 -------------------
 
 The `master` branch is meant to be stable. Development is normally done in separate branches.
-[Tags](https://github.com/maximus-labs/maximus/tags) are created to indicate new official,
+[Tags](https://github.com/maximus-chain/maximus/tags) are created to indicate new official,
 stable release versions of Maximus Core.
 
 The `develop` branch is regularly built (see doc/build-*.md for instructions) and tested, but is not guaranteed to be

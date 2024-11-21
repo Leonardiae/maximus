@@ -67,7 +67,7 @@ brew install berkeley-db4
 
 1. Clone the Maximus Core source code:
     ```shell
-    git clone https://github.com/maximus-labs/maximus
+    git clone https://github.com/maximus-chain/maximus
     cd maximus
     ```
 
