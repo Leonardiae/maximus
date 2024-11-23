@@ -149,8 +149,6 @@ public:
         consensus.nSubsidyHalvingInterval = 1200 * 30; // ~ one month;
         consensus.BIP16Height = 0;
         consensus.nMasternodePaymentsStartBlock = 250; // not true, but it's oknMasternodePaymentsIncreaseBlock
-        // consensus.nMasternodePaymentsIncreaseBlock = 65000;
-        // consensus.nMasternodePaymentsIncreasePeriod = 960 * 30;
         consensus.nInstantSendConfirmationsRequired = 6;
         consensus.nInstantSendKeepLock = 24;
         consensus.nBudgetPaymentsStartBlock = 250;
@@ -321,19 +319,17 @@ class CTestNetParams : public CChainParams {
 public:
     CTestNetParams() {
         strNetworkID = CBaseChainParams::TESTNET;
-        consensus.nSubsidyHalvingInterval = 1200 * 30; // ~ half a month;
+        consensus.nSubsidyHalvingInterval = 1200 * 30;
         consensus.BIP16Height = 0;
         consensus.nMasternodePaymentsStartBlock = 250;
-        // consensus.nMasternodePaymentsIncreaseBlock = 631;
-        // consensus.nMasternodePaymentsIncreasePeriod = 10;
         consensus.nInstantSendConfirmationsRequired = 6;
         consensus.nInstantSendKeepLock = 24;
         consensus.nBudgetPaymentsStartBlock = 250;
         consensus.nBudgetPaymentsCycleBlocks = 250;
         consensus.nBudgetPaymentsWindowBlocks = 100;
-        consensus.nSuperblockStartBlock = 18000; // ~ quarter of a month;
+        consensus.nSuperblockStartBlock = 350;
         consensus.nSuperblockStartHash = uint256();
-        consensus.nSuperblockCycle = 100; // Superblocks can be issued hourly on testnet
+        consensus.nSuperblockCycle = 50; // Superblocks can be issued frequently on testnet
         consensus.nSuperblockMaturityWindow = 10;
         consensus.nGovernanceMinQuorum = 1;
         consensus.nGovernanceFilterElements = 500;
@@ -491,8 +487,6 @@ public:
         consensus.nSubsidyHalvingInterval = 1200 * 30; // ~ one month;
         consensus.BIP16Height = 0;
         consensus.nMasternodePaymentsStartBlock = 250; // not true, but it's ok
-        // consensus.nMasternodePaymentsIncreaseBlock = 65000;
-        // consensus.nMasternodePaymentsIncreasePeriod = 10;
         consensus.nInstantSendConfirmationsRequired = 2;
         consensus.nInstantSendKeepLock = 6;
         consensus.nBudgetPaymentsStartBlock = 250;
@@ -738,8 +732,6 @@ public:
         consensus.nSubsidyHalvingInterval = 1200; // ~ one day
         consensus.BIP16Height = 0; // always enforce P2SH BIP16 on regtest
         consensus.nMasternodePaymentsStartBlock = 250;
-        // consensus.nMasternodePaymentsIncreaseBlock = 65000;
-        // consensus.nMasternodePaymentsIncreasePeriod = 960 * 30;
         consensus.nInstantSendConfirmationsRequired = 6;
         consensus.nInstantSendKeepLock = 24;
         consensus.nBudgetPaymentsStartBlock = 250;
