@@ -1,0 +1,131 @@
+Masternode setup
+==========
+
+This tutorial describes how to install a Maximus masternode on an Ubuntu Linux machine. 
+It is preferable to use a VPS for stability and security reasons. 
+This is a basic guide. If you have questions please reach out and visit our Discord for more information.
+
+Requirements
+---------------------
+- An Ubuntu VPS
+- Have the required amount of MAXI collateral (350) in your wallet + a bit extra to pay for network fees.
+
+Instructions
+---------------------
+
+Log in to your VPS and run those commands
+```
+sudo apt update && sudo apt upgrade -y
+mkdir -p maximus
+cd maximus
+wget https://github.com/Maximus-Chain/maximus/releases/download/v1.0.0/maximus-1.0.0-x86_64-linux-gnu.tar.gz
+tar -xvf maximus-1.0.0-x86_64-linux-gnu.tar.gz
+mkdir ~/.maximuscore && touch ~/.maximuscore/maximus.conf
+echo "daemon=1" >> ~/.maximuscore/maximus.conf
+~/maximus/./maximusd
+```
+
+You should see Maximusd starting, we will return to it later.
+
+Now open your Maximus-QT wallet and go to the Receive tab.
+Generate three different addresses and label them as follows:
+
+- Masternode Collateral
+- Masternode Owner
+- Masternode Payout
+
+Send 350 MAXI to the address generated as the Masternode Collateral address. Make sure that the 'Subtract fee from amount' checkbox is not active.
+Wait for at least one confirmation.
+
+Go to Window > Console and type:
+```
+masternode outputs
+```
+You'll see a response like:
+```
+[
+
+]
+```
+Now type:
+```
+bls generate
+```
+You'll get a response like:
+```
+{
+  "secret": "26dd067a6789d8de9b3ab07c623ffe9f82b510b5bb3211292ec3b929aa658b1a",
+  "public": "ac3a2414ea4598a73fa9a0e05136c7dc9ce9f3a69e557ace3a537546c26e76b1a9f886262a360cbec560062ff4568795",
+  "scheme": "basic"
+}
+```
+
+We will now use those values to register the masternode via the protx register command. This command has the following syntax:
+
+```
+protx register collateralHash collateralIndex ipAndPort ownerAddress operatorPubKey votingAddress operatorReward payoutAddress feeSourceAddress
+```
+
+Change this command to register the masternode.
+- ```collateralHash```: Transaction id from the RPC command “masternode outputs”. This is only the part from before the '-'.
+- ```collateralIndex```: The output index of the RPC command “masternode outputs”. This is only the part from after the '-'.
+- ```ipAndPort```: Masternode IP address and port, in the format x.x.x.x:yyyy
+
+For example:
+
+```
+protx register x 0 1.2.3.4:9969 x x x 0 x x
+```
+
+Go to Window > Console and enter the command.
+
+Return to the VPS and run
+```
+~/maximus/./maximus-cli stop
+sudo nano ~/.maximuscore/maximus.conf
+```
+
+Paste the following:
+```
+rpcuser=some_username
+rpcpassword=some_password
+rpcbind=127.0.0.1
+rpcallowip=127.0.0.1
+listen=1
+server=1
+daemon=1
+masternodeblsprivkey=x
+externalip=1.2.3.4
+```
+
+- ```rpcuser```: Change the username
+- ```rpcpassword```: Change the password
+- ```1.2.3.4```: External IPv4 address of your VPS.
+- ```masternodeblsprivkey```: x = “secret” value from the RPC command “bls generate” you ran earlier.
+
+Save the file with the keyboard shortcut CTRL + x.
+
+Type the following command to start your masternode:
+```
+~/maximus/./maximusd
+```
+
+You can run this command to check the status of your masternode
+```
+~/maximus/./maximus-cli masternode status
+```
+You should see
+```
+  "state": "READY",
+  "status": "Ready"
+```
+
+If you see
+```
+```
+It probably means your node is still syncing the blockchain and you have to wait until that's finished.
+
+You can run this command and compare the result with the explorer to follow it's progress.
+```
+~/maximus/./maximus-cli getblockcount
+```
