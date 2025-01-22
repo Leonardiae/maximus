@@ -41,21 +41,21 @@ Go to Window > Console and type:
 ```
 masternode outputs
 ```
-You'll see a response like:
+You'll see a response like this:
 ```
 [
-
+  "4d0eef831c96cde0149bde9319d7c1c69c2657d25ae37dd6ccd492c1a688a108-1"
 ]
 ```
 Now type:
 ```
 bls generate
 ```
-You'll get a response like:
+You'll get a response like this:
 ```
 {
-  "secret": "26dd067a6789d8de9b3ab07c623ffe9f82b510b5bb3211292ec3b929aa658b1a",
-  "public": "ac3a2414ea4598a73fa9a0e05136c7dc9ce9f3a69e557ace3a537546c26e76b1a9f886262a360cbec560062ff4568795",
+  "secret": "3d8f7154c58a7e5abfce0d2128d1b6116260d0ab22af69ff9e59172e3d3e1714",
+  "public": "808db2e80dcc4753fba9f9105aeeee1e8898f3a35e30608303e2a14f4a7ac50ba68b9cc76cf80a4eca03a00ead13a899",
   "scheme": "basic"
 }
 ```
@@ -70,6 +70,8 @@ Change this command to register the masternode.
 - ```collateralHash```: Transaction id from the RPC command “masternode outputs”. This is only the part from before the '-'.
 - ```collateralIndex```: The output index of the RPC command “masternode outputs”. This is only the part from after the '-'.
 - ```ipAndPort```: Masternode IP address and port, in the format x.x.x.x:yyyy
+
+mention feesourceaddress commmand listaddressbalances
 
 For example:
 
