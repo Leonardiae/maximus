@@ -44,7 +44,7 @@ masternode outputs
 You'll see a response like this:
 ```
 [
-  "4d0eef831c96cde0149bde9319d7c1c69c2657d25ae37dd6ccd492c1a688a108-1"
+  "52f5bc501a2c36b99628335a1c166994ff520e27e78e7d98c8e286a7a3f4c0a4-1"
 ]
 ```
 Now type:
@@ -54,8 +54,8 @@ bls generate
 You'll get a response like this:
 ```
 {
-  "secret": "3d8f7154c58a7e5abfce0d2128d1b6116260d0ab22af69ff9e59172e3d3e1714",
-  "public": "808db2e80dcc4753fba9f9105aeeee1e8898f3a35e30608303e2a14f4a7ac50ba68b9cc76cf80a4eca03a00ead13a899",
+  "secret": "651f742b9c542345c20e8a236093ced15ec4e1d800e6def6090d36aba080ef2e",
+  "public": "84d79a0b1381a861513f9d64139f016dd1dd88240aa8e132743128858bc5bc34728f6827b1f0fc3a706083e3f9744ac6",
   "scheme": "basic"
 }
 ```
@@ -66,22 +66,24 @@ We will now use those values to register the masternode via the protx register c
 protx register collateralHash collateralIndex ipAndPort ownerAddress operatorPubKey votingAddress operatorReward payoutAddress feeSourceAddress
 ```
 
-Change this command to register the masternode.
+For example:
+```
+protx register 52f5bc501a2c36b99628335a1c166994ff520e27e78e7d98c8e286a7a3f4c0a4 1 1.2.3.4:9939 mUJS91VAiTgZWcT2ufVYTRX3XQuhb8sVgD 84d79a0b1381a861513f9d64139f016dd1dd88240aa8e132743128858bc5bc34728f6827b1f0fc3a706083e3f9744ac6 "" 0 mViwHk64yrssSyjUWiDRnBbpu1bmWeexEW mYUdafagCxHL3woAQUfnasJVsYFMpqemaB
+```
+
+Change this command to register the masternode:
 - ```collateralHash```: Transaction id from the RPC command “masternode outputs”. This is only the part from before the '-'.
 - ```collateralIndex```: The output index of the RPC command “masternode outputs”. This is only the part from after the '-'.
-- ```ipAndPort```: Masternode IP address and port, in the format x.x.x.x:yyyy
+- ```ipAndPort```: Masternode IP address and port, in the format x.x.x.x:yyyy.
+- ```ownerAddress```: The address you generated earlier with label Masternode Owner.
+- ```operatorPubKey```: “public” value from the RPC command “bls generate” you ran earlier.
+- ```payoutAddress```: The address you generated earlier with label Masternode Payout.
+- ```feeSourceAddress```: Go to Window > Console and type 'listaddressbalances' to show all addresses with a balance and pick one (not the one holding the masternode collateral).
 
-mention feesourceaddress commmand listaddressbalances
+Now go to Window > Console and enter the command. It should return with a hash. 
+N.B. If you get an error, please check carefully if you replaced the values correctly.
 
-For example:
-
-```
-protx register x 0 1.2.3.4:9969 x x x 0 x x
-```
-
-Go to Window > Console and enter the command.
-
-Return to the VPS and run
+Wait for at least one confirmation, return to the VPS and run:
 ```
 ~/maximus/./maximus-cli stop
 sudo nano ~/.maximuscore/maximus.conf
@@ -95,7 +97,6 @@ rpcbind=127.0.0.1
 rpcallowip=127.0.0.1
 listen=1
 server=1
-daemon=1
 masternodeblsprivkey=x
 externalip=1.2.3.4
 ```
@@ -116,14 +117,21 @@ You can run this command to check the status of your masternode
 ```
 ~/maximus/./maximus-cli masternode status
 ```
+
 You should see
 ```
   "state": "READY",
   "status": "Ready"
 ```
 
+Now you can return to your QT wallet to monitor the status of your masternode and payments. 
+Make sure that you have enabled the Masternode tab in your wallet. You can do this by going to:
+Settings > Options, go to the Wallet tab and enable Show Masternodes Tab. 
+
 If you see
 ```
+  "state": "WAITING_FOR_PROTX",
+  "status": "Waiting for ProTx to appear on-chain"
 ```
 It probably means your node is still syncing the blockchain and you have to wait until that's finished.
 
